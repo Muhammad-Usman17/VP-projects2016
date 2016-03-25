@@ -1,0 +1,6 @@
+c:\users\muhammad_usman\documents\visual studio 2015\Projects\compiler\compiler\bin\Debug\compiler.exe.config
+c:\users\muhammad_usman\documents\visual studio 2015\Projects\compiler\compiler\bin\Debug\compiler.exe
+c:\users\muhammad_usman\documents\visual studio 2015\Projects\compiler\compiler\bin\Debug\compiler.pdb
+c:\users\muhammad_usman\documents\visual studio 2015\Projects\compiler\compiler\obj\Debug\compiler.csprojResolveAssemblyReference.cache
+c:\users\muhammad_usman\documents\visual studio 2015\Projects\compiler\compiler\obj\Debug\compiler.exe
+c:\users\muhammad_usman\documents\visual studio 2015\Projects\compiler\compiler\obj\Debug\compiler.pdb
