@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using System.ServiceProcess;
+
+
 namespace SerLog
 {
     /// <summary>
@@ -36,6 +39,7 @@ namespace SerLog
         private void button_Click(object sender, RoutedEventArgs e)
         {
            
+
 
         }
 
@@ -78,6 +82,11 @@ namespace SerLog
                 this.Close();
 
             }
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

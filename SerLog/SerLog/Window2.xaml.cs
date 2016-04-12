@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,6 +38,63 @@ namespace SerLog
             
            W.Show();
             this.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+          
+            
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string newmail =textBox.Text.ToString();
+            SetSetting("AdminEMail", newmail);
+    }
+        private static string GetSetting(string key)
+        {
+            return ConfigurationManager.AppSettings[key];
+        }
+
+        private static void SetSetting(string key, string value)
+        {
+            Configuration configuration =ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            configuration.AppSettings.Settings[key].Value = value;
+            configuration.Save(ConfigurationSaveMode.Full, true);
+            ConfigurationManager.RefreshSection("appSettings");
+        }
+        private static void sendNotificarion(String appAdd,String adminAdd)
+        {
+
+            SmtpClient client = new SmtpClient();
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential(appAdd, "bse123456");
+            client.Port = 587;
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true;
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(appAdd);
+            mail.To.Add(adminAdd);
+            mail.Subject = "subject thing";
+            mail.Body = "sufyan";
+            try
+            {
+                client.Send(mail);
+               MessageBox.Show("done");
+            }
+            catch (SmtpException e)
+            {
+               
+                MessageBox.Show(e.InnerException.Message);
+            }
+        }
+
+        private void button2_Click_1(object sender, RoutedEventArgs e)
+        {
+            sendNotificarion(GetSetting("SystemMail"), GetSetting("AdminEMail"));
+            
+
         }
     }
 }

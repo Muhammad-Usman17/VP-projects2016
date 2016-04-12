@@ -13,7 +13,7 @@
                 <RowDefinition Height="131*"/>
                 <RowDefinition Height="188*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="81" Height="45" Click="button_Click"/>
+            <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="button_Click"/>
 
             <ListView x:Name="listView" HorizontalAlignment="Left" Height="148" Margin="22,30,0,0" VerticalAlignment="Top" Width="227" Grid.Row="1">
                 <ListView.View>
@@ -60,24 +60,25 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="button2" Content="Stop" HorizontalAlignment="Left" Margin="107,41,0,0" VerticalAlignment="Top" Width="81" Height="45"/>
-            <Button x:Name="button3" Content="New" HorizontalAlignment="Left" Margin="204,41,0,0" VerticalAlignment="Top" Width="81" Height="45"/>
+            <Button x:Name="button2" Content="Stop" HorizontalAlignment="Left" Margin="107,40,0,0" VerticalAlignment="Top" Width="90" Height="26"/>
+            <Button x:Name="button3" Content="New" HorizontalAlignment="Left" Margin="8,83,0,0" VerticalAlignment="Top" Width="91" Height="26"/>
             <Button x:Name="button4" Content="Log View" HorizontalAlignment="Left" Margin="357,82,0,0" VerticalAlignment="Top" Width="104" Height="39" Click="button4_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Separator HorizontalAlignment="Left" Height="100" Margin="282,26,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.5,0.5">
+            <Separator HorizontalAlignment="Left" Height="100" Margin="281,28,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.5,0.5">
                 <Separator.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="90.308"/>
+                        <RotateTransform Angle="90.305"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </Separator.RenderTransform>
             </Separator>
             <Button x:Name="button5" Content="Sign Out" HorizontalAlignment="Left" Margin="467,-1,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="button5_Click"/>
+            <Button x:Name="button6" Content="Remove" HorizontalAlignment="Left" Margin="110,83,0,0" VerticalAlignment="Top" Width="87" Height="26" Click="button6_Click"/>
         </Grid>
     </Viewbox>
 </Window>
