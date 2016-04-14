@@ -96,5 +96,19 @@ namespace SerLog
             
 
         }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            string newADMIN = textBox1.Text.ToString();
+            SetSetting("Admin", newADMIN);
+            MessageBox.Show("Admin name is Sucesfully changed");
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            string newpaswword = textBox2.Text.ToString();
+            SetSetting("Password", newpaswword);
+            MessageBox.Show("Admin Password is Sucesfully changed");
+        }
     }
 }
