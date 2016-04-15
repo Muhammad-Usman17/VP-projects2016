@@ -22,9 +22,26 @@ namespace SerLog
     /// </summary>
     public partial class Window1 : Window
     {
+        ServiceController sc;
         public Window1()
         {
             InitializeComponent();
+            sc = new System.ServiceProcess.ServiceController("service2");
+            if (sc.Status.Equals(ServiceControllerStatus.Stopped))
+            {
+                button.IsEnabled = true;
+                button2.IsEnabled = false;
+
+            }
+            else if (sc.Status.Equals(ServiceControllerStatus.Running))
+                {
+                    button.IsEnabled = false;
+                    button2.IsEnabled = true;
+
+                }
+            
+
+
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -39,9 +56,42 @@ namespace SerLog
         private void button_Click(object sender, RoutedEventArgs e)
         {
            
+            try
+            {
+
+                if (sc.Status.Equals(ServiceControllerStatus.Paused))
+                {
+                    sc.Continue();
+                    sc.WaitForStatus(ServiceControllerStatus.Running);
+                    button.IsEnabled = false;
+                    button2.IsEnabled = true;
 
 
+                }
+                else
+                {
+                    sc.Start();
+                    sc.WaitForStatus(ServiceControllerStatus.Running);
+                    if (sc.Status.Equals(ServiceControllerStatus.Running))
+                    {
+                        button.IsEnabled = false;
+                        button2.IsEnabled = true;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not start " + " Service.\n Error : " + ex.Message.ToString());
+            }
+            finally
+            {
+                sc.Close();
+            }
         }
+
+    
 
      
 
@@ -86,6 +136,46 @@ namespace SerLog
 
         private void button6_Click(object sender, RoutedEventArgs e)
         {
+           
+
+            System.ServiceProcess.ServiceController[] services;
+            services = System.ServiceProcess.ServiceController.GetServices();
+            listBox.Items.Clear();
+            for (int i = 0; i < services.Length; i++)
+            {
+                listBox.Items.Add(services[i].ServiceName);
+            }
+        }
+
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            listView1.Items.Add(listBox.SelectedItem );
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            
+            try
+            {
+                sc.Stop();
+                sc.WaitForStatus(ServiceControllerStatus.Stopped);
+
+
+                if (sc.Status.Equals(ServiceControllerStatus.Stopped))
+                {
+                    button.IsEnabled = true;
+                    button2.IsEnabled = false;
+
+                }
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not stop "  + " Service.\n Error : " + ex.Message.ToString());
+            }
+            finally
+            {
+                sc.Close();
+            }
 
         }
     }

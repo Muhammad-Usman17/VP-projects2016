@@ -39,3 +39,4 @@ C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\Se
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.csproj.GenerateResource.Cache
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.exe
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.pdb
+C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.csprojResolveAssemblyReference.cache
