@@ -26,7 +26,7 @@ namespace SerLog
         public Window1()
         {
             InitializeComponent();
-            sc = new System.ServiceProcess.ServiceController("service2");
+            sc = new System.ServiceProcess.ServiceController("ServiceMoniter");
             if (sc.Status.Equals(ServiceControllerStatus.Stopped))
             {
                 button.IsEnabled = true;
@@ -36,7 +36,7 @@ namespace SerLog
             else if (sc.Status.Equals(ServiceControllerStatus.Running))
                 {
                     button.IsEnabled = false;
-                    button2.IsEnabled = true;
+                button2.IsEnabled = true;
 
                 }
             
@@ -70,7 +70,9 @@ namespace SerLog
                 }
                 else
                 {
-                    sc.Start();
+                    String S=(String)listView1.Items[0];
+                    String[] service = { S };
+                    sc.Start(service);
                     sc.WaitForStatus(ServiceControllerStatus.Running);
                     if (sc.Status.Equals(ServiceControllerStatus.Running))
                     {
