@@ -1,0 +1,69 @@
+4/16/2016 10:55:01 PM :test window service started
+4/16/2016 10:55:04 PM :your service is crashed 
+4/16/2016 10:55:05 PM :test window service stoped
+4/16/2016 10:55:08 PM :test window service started
+4/16/2016 10:55:14 PM :your service is crashed 
+4/16/2016 10:55:20 PM :done
+4/16/2016 10:55:20 PM :your service is crashed 
+4/16/2016 10:55:21 PM :test window service stoped
+4/16/2016 11:01:12 PM :test window service started
+4/16/2016 11:01:27 PM :your service is crashed 
+4/16/2016 11:01:32 PM :done
+4/16/2016 11:01:42 PM :your service is crashed 
+4/16/2016 11:01:47 PM :done
+4/16/2016 11:02:04 PM :test window service stoped
+4/16/2016 11:02:21 PM :test window service started
+4/16/2016 11:02:24 PM :your service is crashed 
+4/16/2016 11:02:30 PM :done
+4/16/2016 11:02:33 PM :your service is crashed 
+4/16/2016 11:02:39 PM :done
+4/16/2016 11:02:39 PM :your service is crashed 
+4/16/2016 11:02:45 PM :done
+4/16/2016 11:04:11 PM :test window service stoped
+4/16/2016 11:21:53 PM :test window service started
+4/16/2016 11:21:56 PM :your service is crashed 
+4/16/2016 11:22:01 PM :done
+4/16/2016 11:27:57 PM :test window service stoped
+4/16/2016 11:27:59 PM :test window service started
+4/16/2016 11:28:35 PM :test window service stoped
+4/16/2016 11:28:45 PM :test window service started
+4/16/2016 11:30:49 PM :test window service stoped
+4/16/2016 11:31:29 PM :test window service started
+4/16/2016 11:32:26 PM :test window service stoped
+4/16/2016 11:33:33 PM :test window service started
+4/16/2016 11:34:46 PM :test window service stoped
+4/16/2016 11:35:24 PM :test window service started
+4/16/2016 11:36:15 PM :test window service stoped
+4/16/2016 11:41:11 PM :test window service started
+4/16/2016 11:42:20 PM :test window service stoped
+4/16/2016 11:42:24 PM :test window service started
+4/16/2016 11:42:35 PM :test window service stoped
+4/16/2016 11:48:37 PM :test window service started
+4/16/2016 11:48:40 PM :your service is crashed 
+4/16/2016 11:48:41 PM :test window service stoped
+4/17/2016 12:04:29 AM :test window service started
+4/17/2016 12:04:32 AM :your service is crashed 
+4/17/2016 12:04:38 AM :done
+4/17/2016 12:04:44 AM :your service is crashed 
+4/17/2016 12:04:50 AM :done
+4/17/2016 12:05:23 AM :your service is crashed 
+4/17/2016 12:05:29 AM :done
+4/17/2016 12:05:29 AM :your service is crashed 
+4/17/2016 12:05:35 AM :done
+4/17/2016 12:05:41 AM :your service is crashed 
+4/17/2016 12:05:46 AM :done
+4/17/2016 12:06:15 AM :test window service stoped
+4/17/2016 12:06:32 AM :test window service started
+4/17/2016 12:06:41 AM :your service is crashed 
+4/17/2016 12:06:47 AM :done
+4/17/2016 12:08:04 AM :test window service stoped
+4/17/2016 12:08:51 AM :test window service started
+4/17/2016 12:08:54 AM :your service is crashed 
+4/17/2016 12:08:59 AM :done
+4/17/2016 12:09:15 AM :your service is crashed 
+4/17/2016 12:09:19 AM :test window service stoped
+4/17/2016 12:16:04 AM :test window service started
+4/17/2016 12:16:25 AM :test window service stoped
+4/17/2016 12:16:45 AM :test window service started
+4/17/2016 12:17:00 AM :your service is crashed 
+4/17/2016 12:17:04 AM :done

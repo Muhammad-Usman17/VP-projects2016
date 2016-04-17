@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\MonitorService\MonitorService\obj\Debug\MonitorService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\MonitorService\MonitorService\obj\Debug\MonitorService.InstallLog
+   assemblypath = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\MonitorService\MonitorService\obj\Debug\MonitorService.exe
+Installing service ServiceMoniter...
+Service ServiceMoniter has been successfully installed.
+Creating EventLog source ServiceMoniter in log Application...
+Committing assembly 'C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\MonitorService\MonitorService\obj\Debug\MonitorService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\MonitorService\MonitorService\obj\Debug\MonitorService.InstallLog
+   assemblypath = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\MonitorService\MonitorService\obj\Debug\MonitorService.exe
