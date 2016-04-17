@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using System.ServiceProcess;
-
+using System.Configuration;
 
 namespace SerLog
 {
@@ -71,16 +71,21 @@ namespace SerLog
                 else
                 {
                     String S=(String)listView1.Items[0];
-                    String[] service = { S };
-                    sc.Start(service);
-                    sc.WaitForStatus(ServiceControllerStatus.Running);
-                    if (sc.Status.Equals(ServiceControllerStatus.Running))
+                    if (S.Equals(null) || S.Equals(""))
                     {
-                        button.IsEnabled = false;
-                        button2.IsEnabled = true;
-
+                        MessageBox.Show("Error!  SELECT service to monitor before start!!");
                     }
+                    else {
+                        String[] service = { S , GetSetting("AdminEMail") };
+                        sc.Start(service);
+                        sc.WaitForStatus(ServiceControllerStatus.Running);
+                        if (sc.Status.Equals(ServiceControllerStatus.Running))
+                        {
+                            button.IsEnabled = false;
+                            button2.IsEnabled = true;
 
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -93,9 +98,12 @@ namespace SerLog
             }
         }
 
-    
 
-     
+
+        private static string GetSetting(string key)
+        {
+            return ConfigurationManager.AppSettings[key];
+        }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -140,18 +148,13 @@ namespace SerLog
         {
            
 
-            System.ServiceProcess.ServiceController[] services;
-            services = System.ServiceProcess.ServiceController.GetServices();
-            listBox.Items.Clear();
-            for (int i = 0; i < services.Length; i++)
-            {
-                listBox.Items.Add(services[i].ServiceName);
-            }
+           
         }
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            listView1.Items.Add(listBox.SelectedItem );
+            listView1.Items.Clear();
+            listView1.Items.Add((string)listBox.SelectedItem);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
@@ -177,6 +180,18 @@ namespace SerLog
             finally
             {
                 sc.Close();
+            }
+
+        }
+
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            System.ServiceProcess.ServiceController[] services;
+            services = System.ServiceProcess.ServiceController.GetServices();
+            listBox.Items.Clear();
+            for (int i = 0; i < services.Length; i++)
+            {
+                listBox.Items.Add(services[i].ServiceName);
             }
 
         }

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace SerLog
 {
@@ -59,9 +60,13 @@ namespace SerLog
 
         private static void SetSetting(string key, string value)
         {
+            XmlDocument xml = new XmlDocument();
+            xml.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
             Configuration configuration =ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             configuration.AppSettings.Settings[key].Value = value;
+
             configuration.Save(ConfigurationSaveMode.Full, true);
+            xml.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
             ConfigurationManager.RefreshSection("appSettings");
         }
         private static void sendNotificarion(String appAdd,String adminAdd)
