@@ -66,8 +66,9 @@ namespace SerLog
             configuration.AppSettings.Settings[key].Value = value;
 
             configuration.Save(ConfigurationSaveMode.Full, true);
-            xml.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
             ConfigurationManager.RefreshSection("appSettings");
+            xml.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+            
         }
         private static void sendNotificarion(String appAdd,String adminAdd)
         {

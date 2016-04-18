@@ -48,9 +48,9 @@ namespace SerLog
 
                 this.Hide();
                 Window1 W = new Window1();
-                this.Close();
                 W.Show();
-           }
+                this.Close();
+            }
            else
                 MessageBox.Show("admin or passsword is wrong!!");
             passwordBox.Clear();
