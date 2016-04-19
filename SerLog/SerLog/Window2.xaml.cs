@@ -50,9 +50,17 @@ namespace SerLog
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string newmail =textBox.Text.ToString();
-            SetSetting("AdminEMail", newmail);
-    }
+            string newmail = textBox.Text.ToString();
+            if (!IsValidEmail(newmail))
+            {
+                MessageBox.Show("You enter the invalid email!!");
+            }
+            else
+            {
+                SetSetting("AdminEMail", newmail);
+                MessageBox.Show("Admin name is Sucesfully changed");
+            }
+        }
         private static string GetSetting(string key)
         {
             return ConfigurationManager.AppSettings[key];
@@ -60,15 +68,15 @@ namespace SerLog
 
         private static void SetSetting(string key, string value)
         {
-            XmlDocument xml = new XmlDocument();
-            xml.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-            Configuration configuration =ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            configuration.AppSettings.Settings[key].Value = value;
-
-            configuration.Save(ConfigurationSaveMode.Full, true);
+        
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings.Remove(key);
+            config.AppSettings.Settings.Add(key, value);
+            config.Save(ConfigurationSaveMode.Modified, true);
+            config.SaveAs(@"C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\App.config", ConfigurationSaveMode.Modified, true);
             ConfigurationManager.RefreshSection("appSettings");
-            xml.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-            
+
+
         }
         private static void sendNotificarion(String appAdd,String adminAdd)
         {
@@ -87,7 +95,7 @@ namespace SerLog
             try
             {
                 client.Send(mail);
-               MessageBox.Show("done");
+               MessageBox.Show("Email sent ");
             }
             catch (SmtpException e)
             {
@@ -115,6 +123,18 @@ namespace SerLog
             string newpaswword = textBox2.Text.ToString();
             SetSetting("Password", newpaswword);
             MessageBox.Show("Admin Password is Sucesfully changed");
+        }
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
