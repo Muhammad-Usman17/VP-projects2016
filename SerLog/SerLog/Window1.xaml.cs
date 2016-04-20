@@ -55,7 +55,7 @@ namespace SerLog
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-           
+
             try
             {
 
@@ -70,22 +70,30 @@ namespace SerLog
                 }
                 else
                 {
-                    String S=(String)listView1.Items[0];
-                    if (S.Equals(null) || S.Equals(""))
-                    {
-                        MessageBox.Show("Error!  SELECT service to monitor before start!!");
-                    }
-                    else {
-                        String[] service = { S , GetSetting("AdminEMail") };
-                        sc.Start(service);
-                        sc.WaitForStatus(ServiceControllerStatus.Running);
-                        if (sc.Status.Equals(ServiceControllerStatus.Running))
-                        {
-                            button.IsEnabled = false;
-                            button2.IsEnabled = true;
+                    List<string> list = new List<string>();
+                    list.Add(GetSetting("AdminEMail"));
 
-                        }
+
+
+                    string item = string.Empty;
+                    for(int i=0;i<listView1.Items.Count; i++)
+                    {
+                        list.Add(listView1.Items[i].ToString());
+                     
+
                     }
+
+
+                    string[] service = list.ToArray();
+                    sc.Start(service);
+                    sc.WaitForStatus(ServiceControllerStatus.Running);
+                    if (sc.Status.Equals(ServiceControllerStatus.Running))
+                    {
+                        button.IsEnabled = false;
+                        button2.IsEnabled = true;
+
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -153,7 +161,7 @@ namespace SerLog
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            listView1.Items.Clear();
+          
             listView1.Items.Add((string)listBox.SelectedItem);
         }
 
@@ -193,6 +201,11 @@ namespace SerLog
             {
                 listBox.Items.Add(services[i].ServiceName);
             }
+
+        }
+
+        private void listView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }

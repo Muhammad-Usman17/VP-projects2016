@@ -14,7 +14,7 @@
                 <RowDefinition Height="188*"/>
             </Grid.RowDefinitions>
             <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="button_Click"/>
-            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="147" Margin="270,29,0,0" VerticalAlignment="Top" Width="230" Grid.Row="1" Background="White" >
+            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="147" Margin="270,29,0,0" VerticalAlignment="Top" Width="230" Grid.Row="1" Background="White" SelectionChanged="listView1_SelectionChanged" >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Service Name" />
