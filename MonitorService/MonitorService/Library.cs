@@ -48,6 +48,11 @@ namespace MonitorService
             }
 
         }
+        public static void Remove()
+        {
+
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Logfile.txt", String.Empty);
+        }
     }
 
 }
