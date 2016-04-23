@@ -43,12 +43,13 @@ namespace SerLog
 
             string admin = textBox.Text.ToString();
             string password = passwordBox.Password.ToString();
-            if (admin == GetSetting("Admin") && password == GetSetting("Password"))
+            if (admin.Equals(GetSetting("Admin")) && password.Equals(GetSetting("Password")))
             {
 
-                this.Hide();
+
                 Window1 W = new Window1();
                 W.Show();
+                this.Hide();
                 this.Close();
             }
             else

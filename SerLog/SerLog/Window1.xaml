@@ -14,16 +14,16 @@
                 <RowDefinition Height="188*"/>
             </Grid.RowDefinitions>
             <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="button_Click"/>
-            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="147" Margin="270,29,0,0" VerticalAlignment="Top" Width="230" Grid.Row="1" Background="White" SelectionChanged="listView1_SelectionChanged" >
+            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="147" Margin="301,29,0,0" VerticalAlignment="Top" Width="203" Grid.Row="1" Background="White" SelectionChanged="listView1_SelectionChanged" >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Service Name" />
-                       
+
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Label x:Name="label" Content="All Services" HorizontalAlignment="Left" Margin="22,3,0,0" VerticalAlignment="Top" Width="72" Height="26" Grid.Row="1"/>
-            <Label x:Name="label1" Content="Monitered service" HorizontalAlignment="Left" Margin="277,3,0,0" VerticalAlignment="Top" Width="106" Height="26" Grid.Row="1"/>
+            <Label x:Name="label" Content="All Services" HorizontalAlignment="Left" Margin="16,3,0,0" VerticalAlignment="Top" Width="72" Height="26" Grid.Row="1"/>
+            <Label x:Name="label1" Content="Monitored service" HorizontalAlignment="Left" Margin="297,3,0,0" VerticalAlignment="Top" Width="106" Height="26" Grid.Row="1"/>
             <Menu x:Name="menu" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="470" Background="#FFDDD3FF" Margin="-4,0,0,0">
                 <MenuItem Header="Home">
                     <MenuItem Header="Start"/>
@@ -38,7 +38,7 @@
                 </MenuItem>
                 <MenuItem Header="Setting" Click="MenuItem_Click"/>
             </Menu>
-            <Separator HorizontalAlignment="Left" Height="100" Margin="-7,76,0,0" VerticalAlignment="Top" Width="520" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <Separator HorizontalAlignment="Left" Height="100" Margin="-6,81,0,0" VerticalAlignment="Top" Width="520" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
                 <Separator.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -54,7 +54,7 @@
                 </Button.Effect>
             </Button>
             <Button x:Name="button2" Content="Stop" HorizontalAlignment="Left" Margin="107,40,0,0" VerticalAlignment="Top" Width="90" Height="26" Click="button2_Click"/>
-        
+
             <Button x:Name="button4" Content="Log View" HorizontalAlignment="Left" Margin="357,82,0,0" VerticalAlignment="Top" Width="104" Height="39" Click="button4_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
@@ -72,8 +72,10 @@
             </Separator>
             <Button x:Name="button5" Content="Sign Out" HorizontalAlignment="Left" Margin="467,-1,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="button5_Click"/>
             <Button x:Name="button6" Content="Remove" HorizontalAlignment="Left" Margin="108,82,0,0" VerticalAlignment="Top" Width="87" Height="26" Click="button6_Click"/>
-            <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="148" Margin="15,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="219" SelectionChanged="listBox_SelectionChanged"/>
+            <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="148" Margin="15,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="176" SelectionChanged="listBox_SelectionChanged"/>
             <Button x:Name="button7" Content="Show" HorizontalAlignment="Left" Margin="97,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button7_Click"/>
+            <Button x:Name="button3" Content="Add" HorizontalAlignment="Left" Margin="212,75,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
+            <Button x:Name="button8" Content="Remove" HorizontalAlignment="Left" Margin="212,113,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button8_Click"/>
         </Grid>
     </Viewbox>
 </Window>

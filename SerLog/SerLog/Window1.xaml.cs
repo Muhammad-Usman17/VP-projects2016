@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 
 using System.ServiceProcess;
 using System.Configuration;
+using System.IO;
 
 namespace SerLog
 {
@@ -30,13 +31,18 @@ namespace SerLog
             if (sc.Status.Equals(ServiceControllerStatus.Stopped))
             {
                 button.IsEnabled = true;
+                button3.IsEnabled = true;
+                button8.IsEnabled = true;
                 button2.IsEnabled = false;
 
             }
             else if (sc.Status.Equals(ServiceControllerStatus.Running))
                 {
-                    button.IsEnabled = false;
+                button.IsEnabled = false;
+                button3.IsEnabled = false;
+                button8.IsEnabled = false;
                 button2.IsEnabled = true;
+                readfile();
 
                 }
             
@@ -50,66 +56,81 @@ namespace SerLog
             Window2 W2 = new Window2();
 
             W2.Show();
-            this.Close();
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
-            try
+            if (listView1.Items.Count != 0)
             {
-
-                if (sc.Status.Equals(ServiceControllerStatus.Paused))
+                try
                 {
-                    sc.Continue();
-                    sc.WaitForStatus(ServiceControllerStatus.Running);
-                    button.IsEnabled = false;
-                    button2.IsEnabled = true;
 
-
-                }
-                else
-                {
-                    List<string> list = new List<string>();
-                    list.Add(GetSetting("AdminEMail"));
-
-
-
-                    string item = string.Empty;
-                    for(int i=0;i<listView1.Items.Count; i++)
+                    if (sc.Status.Equals(ServiceControllerStatus.Paused))
                     {
-                        list.Add(listView1.Items[i].ToString());
-                     
-
-                    }
-
-
-                    string[] service = list.ToArray();
-                    sc.Start(service);
-                    sc.WaitForStatus(ServiceControllerStatus.Running);
-                    if (sc.Status.Equals(ServiceControllerStatus.Running))
-                    {
+                        sc.Continue();
+                        sc.WaitForStatus(ServiceControllerStatus.Running);
                         button.IsEnabled = false;
+                        button3.IsEnabled = false;
+                        button8.IsEnabled = false;
                         button2.IsEnabled = true;
 
-                    }
 
+                    }
+                    else
+                    {
+                        List<string> list = new List<string>();
+                        List<string> listtxt = new List<string>();
+                        list.Add(GetSetting("AdminEMail"));
+
+
+
+                        string item = string.Empty;
+                        for (int i = 0; i < listView1.Items.Count; i++)
+                        {
+                            list.Add(listView1.Items[i].ToString());
+                            listtxt.Add(listView1.Items[i].ToString());
+
+                        }
+
+
+                        string[] service = list.ToArray();
+                        string[] ser= listtxt.ToArray();
+
+                        writefile(ser);
+                        sc.Start(service);
+                        sc.WaitForStatus(ServiceControllerStatus.Running);
+                        if (sc.Status.Equals(ServiceControllerStatus.Running))
+                        {
+                            button.IsEnabled = false;
+                            button3.IsEnabled = false;
+                            button8.IsEnabled = false;
+                            button2.IsEnabled = true;
+
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Could not start " + " Service.\n Error : " + ex.Message.ToString());
+                }
+                finally
+                {
+                    sc.Close();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Could not start " + " Service.\n Error : " + ex.Message.ToString());
-            }
-            finally
-            {
-                sc.Close();
-            }
+            else
+                MessageBox.Show("You Must have to select atleast one Service before Start");
         }
+
+        
 
 
 
         private static string GetSetting(string key)
         {
+            ConfigurationManager.RefreshSection("appSettings");
             return ConfigurationManager.AppSettings[key];
         }
 
@@ -162,7 +183,6 @@ namespace SerLog
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
           
-            listView1.Items.Add((string)listBox.SelectedItem);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
@@ -177,7 +197,10 @@ namespace SerLog
                 if (sc.Status.Equals(ServiceControllerStatus.Stopped))
                 {
                     button.IsEnabled = true;
+                    button3.IsEnabled = true;
+                    button8.IsEnabled = true;
                     button2.IsEnabled = false;
+
 
                 }
             } 
@@ -206,7 +229,56 @@ namespace SerLog
 
         private void listView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+         
         }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            if(listView1.Items.Contains((string)listBox.SelectedItem))
+            {
+                MessageBox.Show("Caution!! you already add " + (string)listBox.SelectedItem + "   to moniter");
+            }
+            else
+            listView1.Items.Add((string)listBox.SelectedItem);
+        }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            listView1.Items.Remove((string)listView1.SelectedItem);
+        }
+        public void readfile()
+        {
+
+
+            String service = null;
+            using (StreamReader read = new StreamReader("moniteredservice.txt"))
+
+            {
+                while ((service = read.ReadLine()) != null)
+                {
+                    
+                    listView1.Items.Add((string)service);
+                }
+            }
+
+      
+        }
+
+    
+        public void writefile(String []add)
+        {
+    
+        using (StreamWriter write = new StreamWriter("moniteredservice.txt"))
+        {
+
+            foreach (string s in add)
+            {
+                write.WriteLine(s);
+            }
+        }
+
+    }
+       
+
     }
 }

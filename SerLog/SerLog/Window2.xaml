@@ -10,17 +10,17 @@
     <Viewbox Stretch="Uniform" StretchDirection="Both">
         <Grid Width="417">
             <Label x:Name="label" Content="Email Address" HorizontalAlignment="Left" Margin="18,141,0,0" VerticalAlignment="Top" Width="89"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="121,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" TextChanged="textBox_TextChanged"/>
-            <Button x:Name="button" Content="Save " HorizontalAlignment="Left" Margin="309,142,0,92" Width="51" Click="button_Click"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="121,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" TextChanged="textBox_TextChanged"/>
+            <Button x:Name="button" Content="Save " HorizontalAlignment="Left" Margin="337,144,0,90" Width="51" Click="button_Click"/>
             <Label x:Name="label1" Content="Change Setting" HorizontalAlignment="Left" Margin="207,2,0,0" VerticalAlignment="Top" Width="94"/>
             <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="1,6,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
             <Button x:Name="button2" Content="Test Email" HorizontalAlignment="Left" Margin="172,175,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="button2_Click_1"/>
             <Label x:Name="label2" Content="Admin Name" HorizontalAlignment="Left" Margin="20,66,0,0" VerticalAlignment="Top" Width="79"/>
             <Label x:Name="label3" Content="Password" HorizontalAlignment="Left" Margin="20,102,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="121,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
-            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="123,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
-            <Button x:Name="button3" Content="Save" HorizontalAlignment="Left" Margin="310,68,0,0" VerticalAlignment="Top" Width="51" Click="button3_Click"/>
-            <Button x:Name="button4" Content="Save" HorizontalAlignment="Left" Margin="311,108,0,0" VerticalAlignment="Top" Width="48" Click="button4_Click"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="121,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"/>
+            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="123,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+            <Button x:Name="button3" Content="Save" HorizontalAlignment="Left" Margin="336,67,0,0" VerticalAlignment="Top" Width="51" Click="button3_Click"/>
+            <Button x:Name="button4" Content="Save" HorizontalAlignment="Left" Margin="336,106,0,0" VerticalAlignment="Top" Width="48" Click="button4_Click"/>
 
         </Grid>
     </Viewbox>

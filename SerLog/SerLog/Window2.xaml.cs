@@ -63,6 +63,7 @@ namespace SerLog
         }
         private static string GetSetting(string key)
         {
+            ConfigurationManager.RefreshSection("appSettings");
             return ConfigurationManager.AppSettings[key];
         }
 
@@ -90,8 +91,8 @@ namespace SerLog
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(appAdd);
             mail.To.Add(adminAdd);
-            mail.Subject = "subject thing";
-            mail.Body = "sufyan";
+            mail.Subject = "Email testing";
+            mail.Body = "serlog verification test";
             try
             {
                 client.Send(mail);
