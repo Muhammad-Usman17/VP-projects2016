@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SerLog"
         mc:Ignorable="d"
-       Title="Setting" Height="350" Width="525"
-    WindowStartupLocation="CenterScreen" WindowState="Maximized" Foreground="#FFFDFDFD" Background="#FFD7E9F9">
+       Title="Setting" Height="500" Width="700"
+    WindowStartupLocation="CenterScreen" Foreground="#FFFDFDFD" Background="#FFD7E9F9">
     <Viewbox Stretch="Uniform" StretchDirection="Both">
         <Grid Width="417">
             <Label x:Name="label" Content="Email Address" HorizontalAlignment="Left" Margin="18,141,0,0" VerticalAlignment="Top" Width="89"/>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="121,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" TextChanged="textBox_TextChanged"/>
             <Button x:Name="button" Content="Save " HorizontalAlignment="Left" Margin="337,144,0,90" Width="51" Click="button_Click"/>
-            <Label x:Name="label1" Content="Change Setting" HorizontalAlignment="Left" Margin="207,2,0,0" VerticalAlignment="Top" Width="94"/>
-            <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="1,6,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+            <Label x:Name="label1" Content="Change Setting" HorizontalAlignment="Left" Margin="160,-4,0,0" VerticalAlignment="Top" Width="94"/>
+            <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="3,-7,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
             <Button x:Name="button2" Content="Test Email" HorizontalAlignment="Left" Margin="172,175,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="button2_Click_1"/>
             <Label x:Name="label2" Content="Admin Name" HorizontalAlignment="Left" Margin="20,66,0,0" VerticalAlignment="Top" Width="79"/>
             <Label x:Name="label3" Content="Password" HorizontalAlignment="Left" Margin="20,102,0,0" VerticalAlignment="Top"/>

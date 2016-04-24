@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,18 +26,19 @@ namespace SerLog
         {
             InitializeComponent();
             timer.Tick += new EventHandler(Timer_click);
-            timer.Interval = new TimeSpan(0, 0, 3);
+            timer.Interval = new TimeSpan(0, 0, 5);
             timer.Start();
 
            
         }
         private void Timer_click(object sender, EventArgs e)
         {
-            readlastline();
+            readlastError();
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
+            Process.Start( @"C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\MonitorService\MonitorService\bin\Debug\Logfile.txt");
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -52,7 +54,7 @@ namespace SerLog
             W.Show();
             this.Close();
         }
-        public void readlastline()
+        public void readlastError()
         {
 
             String[] message = new String[3];
@@ -64,6 +66,22 @@ namespace SerLog
                 n++;
             }
             textBox.Text = message[2] + Environment.NewLine + message[1] + Environment.NewLine + message[0];
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure to Clear the logfile?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                File.WriteAllText(@"C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\MonitorService\MonitorService\bin\Debug\Logfile.txt", String.Empty);
+
+            }
+            
         }
     }
 }

@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SerLog"
         mc:Ignorable="d"
-        Title="Log view" Height="350" Width="525"
-        WindowStartupLocation="CenterScreen" WindowState="Maximized" Foreground="#FFFDFDFD" Background="#FFD7E9F9">
+        Title="Log view" Height="500" Width="700"
+    WindowStartupLocation="CenterScreen" Foreground="#FFFDFDFD" Background="#FFD7E9F9">
     <Viewbox Stretch="Uniform" StretchDirection="Both">
         <Grid>
             <Button x:Name="button" Content="View Log" HorizontalAlignment="Left" Margin="85,48,0,0" VerticalAlignment="Top" Width="87" Height="26" Click="button_Click"/>
-            <Button x:Name="button1" Content="Print Log" HorizontalAlignment="Left" Margin="86,84,0,0" VerticalAlignment="Top" Width="86" Height="26"/>
+            <Button x:Name="button1" Content="Print Log" HorizontalAlignment="Left" Margin="86,84,0,0" VerticalAlignment="Top" Width="86" Height="26" Click="button1_Click"/>
             <Separator HorizontalAlignment="Left" Height="100" Margin="24,108,0,0" VerticalAlignment="Top" Width="478" RenderTransformOrigin="0.52,-0.25"/>
             <Label x:Name="label" Content="Last Error" HorizontalAlignment="Left" Margin="49,189,0,0" VerticalAlignment="Top" Width="82" Height="31"/>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="92" Margin="151,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" TextChanged="textBox_TextChanged" IsEnabled="False"/>
             <Button x:Name="button2" Content="Back" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top" Width="71" Height="26" Click="button2_Click"/>
-            <Button x:Name="button3" Content="Delete Log" HorizontalAlignment="Left" Margin="85,122,0,0" VerticalAlignment="Top" Width="88" Height="25"/>
+            <Button x:Name="button3" Content="Delete Log" HorizontalAlignment="Left" Margin="85,122,0,0" VerticalAlignment="Top" Width="88" Height="25" Click="button3_Click"/>
         </Grid>
     </Viewbox>
 

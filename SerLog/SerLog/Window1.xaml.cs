@@ -55,7 +55,9 @@ namespace SerLog
             this.Hide();
             Window2 W2 = new Window2();
 
+
             W2.Show();
+            this.Close();
             
         }
 
@@ -233,13 +235,18 @@ namespace SerLog
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            if(listView1.Items.Contains((string)listBox.SelectedItem))
+        {if ((string)listBox.SelectedItem!=( "" ) && (string)listBox.SelectedItem != null)
             {
-                MessageBox.Show("Caution!! you already add " + (string)listBox.SelectedItem + "   to moniter");
+                if (listView1.Items.Contains((string)listBox.SelectedItem))
+                {
+                    MessageBox.Show("Caution!! you already add " + (string)listBox.SelectedItem + "   to moniter");
+                }
+
+                else
+                    listView1.Items.Add((string)listBox.SelectedItem);
             }
             else
-            listView1.Items.Add((string)listBox.SelectedItem);
+                MessageBox.Show(" You have no selected any service");
         }
 
         private void button8_Click(object sender, RoutedEventArgs e)
