@@ -8,7 +8,19 @@
         Title="LOGIN" Height="500" Width="700"
     WindowStartupLocation="CenterScreen" Foreground="#FFFDFDFD" Background="#FFD7E9F9">
     <Viewbox Stretch="Uniform" StretchDirection="Both">
-        <Grid>
+        <Viewbox.OpacityMask>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF8ACCCF" Offset="0.191"/>
+            </LinearGradientBrush>
+        </Viewbox.OpacityMask>
+        <Grid Height="355" Width="531">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF575F72" Offset="0.983"/>
+                    <GradientStop Color="#FF93E4E4" Offset="0.191"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <Label x:Name="label" Content="SerLog" HorizontalAlignment="Center" Margin="215,8,202,266" VerticalAlignment="Center" FontSize="26.667" Height="45" Width="100" FontFamily="Imprint MT Shadow" FontStretch="Condensed"/>
             <Label x:Name="label1" Content="Admin" HorizontalAlignment="Left" Margin="162,125,0,0" VerticalAlignment="Top" Width="67" FontFamily="Arial Rounded MT Bold"/>
             <Label x:Name="label2" Content="Password" HorizontalAlignment="Left" Margin="158,164,0,0" VerticalAlignment="Top" Width="69" FontFamily="Arial Rounded MT Bold"/>

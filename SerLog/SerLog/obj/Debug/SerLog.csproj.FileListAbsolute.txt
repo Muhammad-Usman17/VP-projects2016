@@ -18,10 +18,8 @@ c:\users\muhammad_usman\documents\visual studio 2015\Projects\SerLog\SerLog\obj\
 c:\users\muhammad_usman\documents\visual studio 2015\Projects\SerLog\SerLog\obj\Debug\Window2.baml
 c:\users\muhammad_usman\documents\visual studio 2015\Projects\SerLog\SerLog\obj\Debug\Window3.g.cs
 c:\users\muhammad_usman\documents\visual studio 2015\Projects\SerLog\SerLog\obj\Debug\Window3.baml
-C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\SerLog.exe
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\SerLog.exe.config
-C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe
-C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.pdb
+C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.csprojResolveAssemblyReference.cache
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\MainWindow.g.cs
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\Window1.g.cs
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\Window2.g.cs
@@ -38,5 +36,7 @@ C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\Se
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.csproj.GenerateResource.Cache
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.exe
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.pdb
-C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\SerLog.csprojResolveAssemblyReference.cache
+C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\SerLog.exe
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\SerLog.pdb
+C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe
+C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.pdb
