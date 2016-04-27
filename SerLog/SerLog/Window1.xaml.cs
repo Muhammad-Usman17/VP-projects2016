@@ -43,6 +43,7 @@ namespace SerLog
                 button8.IsEnabled = false;
                 button2.IsEnabled = true;
                 readfile();
+                
 
             }
 

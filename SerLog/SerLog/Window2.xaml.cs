@@ -51,91 +51,40 @@ namespace SerLog
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string newmail = textBox.Text.ToString();
-            if (!IsValidEmail(newmail))
+            if (!SendMail.mail.IsValidEmail(newmail))
             {
                 MessageBox.Show("You enter the invalid email!!");
             }
             else
             {
-                SetSetting("AdminEMail", newmail);
+                ConfigUpdate.File.SetSetting("AdminEMail", newmail);
                 MessageBox.Show("Admin name is Sucesfully changed");
             }
         }
-        private static string GetSetting(string key)
-        {
-            ConfigurationManager.RefreshSection("appSettings");
-            return ConfigurationManager.AppSettings[key];
-        }
+       
 
-        private static void SetSetting(string key, string value)
-        {
-        
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            config.AppSettings.Settings.Remove(key);
-            config.AppSettings.Settings.Add(key, value);
-            config.Save(ConfigurationSaveMode.Modified, true);
-            config.SaveAs(@"C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\App.config", ConfigurationSaveMode.Modified, true);
-            ConfigurationManager.RefreshSection("appSettings");
-
-
-        }
-        private static void sendNotificarion(String appAdd,String adminAdd)
-        {
-
-            SmtpClient client = new SmtpClient();
-            client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential(appAdd, "bse123456");
-            client.Port = 587;
-            client.Host = "smtp.gmail.com";
-            client.EnableSsl = true;
-            MailMessage mail = new MailMessage();
-            mail.From = new MailAddress(appAdd);
-            mail.To.Add(adminAdd);
-            mail.Subject = "Email testing";
-            mail.Body = "serlog verification test";
-            try
-            {
-                client.Send(mail);
-               MessageBox.Show("Email sent ");
-            }
-            catch (SmtpException e)
-            {
-               
-                MessageBox.Show(e.InnerException.Message);
-            }
-        }
 
         private void button2_Click_1(object sender, RoutedEventArgs e)
         {
-            sendNotificarion(GetSetting("SystemMail"), GetSetting("AdminEMail"));
-            
+            SendMail.mail.sendNotification(ConfigUpdate.File.GetSetting("SystemMail"), ConfigUpdate.File.GetSetting("AdminEMail"));
+         
 
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
             string newADMIN = textBox1.Text.ToString();
-            SetSetting("Admin", newADMIN);
+            ConfigUpdate.File.SetSetting("Admin", newADMIN);
             MessageBox.Show("Admin name is Sucesfully changed");
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             string newpaswword = textBox2.Text.ToString();
-            SetSetting("Password", newpaswword);
+            ConfigUpdate.File.SetSetting("Password", newpaswword);
             MessageBox.Show("Admin Password is Sucesfully changed");
         }
-        bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
+        
         }
-    }
+    
 }
