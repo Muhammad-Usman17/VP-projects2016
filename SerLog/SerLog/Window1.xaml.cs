@@ -42,7 +42,12 @@ namespace SerLog
                 button3.IsEnabled = false;
                 button8.IsEnabled = false;
                 button2.IsEnabled = true;
-                readfile();
+                String[] ser = Log.func.readfile();
+                for(int i=0;i<ser.Length;i++)
+                {
+                    listView1.Items.Add((String)ser[i]);
+                }
+                
                 
 
             }
@@ -72,11 +77,7 @@ namespace SerLog
 
 
 
-        private static string GetSetting(string key)
-        {
-            ConfigurationManager.RefreshSection("appSettings");
-            return ConfigurationManager.AppSettings[key];
-        }
+       
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -184,39 +185,7 @@ namespace SerLog
         {
             listView1.Items.Remove((string)listView1.SelectedItem);
         }
-        public void readfile()
-        {
-
-
-            String service = null;
-            using (StreamReader read = new StreamReader("moniteredservice.txt"))
-
-            {
-                while ((service = read.ReadLine()) != null)
-                {
-
-                    listView1.Items.Add((string)service);
-                }
-            }
-
-
-        }
-
-
-        public void writefile(String[] add)
-        {
-
-            using (StreamWriter write = new StreamWriter("moniteredservice.txt"))
-            {
-
-                foreach (string s in add)
-                {
-                    write.WriteLine(s);
-                }
-            }
-
-        }
-
+   
         public void Stop()
 
         {
@@ -269,7 +238,7 @@ namespace SerLog
                     {
                         List<string> list = new List<string>();
                         List<string> listtxt = new List<string>();
-                        list.Add(GetSetting("AdminEMail"));
+                        list.Add(ConfigUpdate.File.GetSetting("AdminEMail"));
 
 
 
@@ -285,7 +254,7 @@ namespace SerLog
                         string[] service = list.ToArray();
                         string[] ser = listtxt.ToArray();
 
-                        writefile(ser);
+                        Log.func.writefile(ser);
                         sc.Start(service);
                         sc.WaitForStatus(ServiceControllerStatus.Running);
                         if (sc.Status.Equals(ServiceControllerStatus.Running))

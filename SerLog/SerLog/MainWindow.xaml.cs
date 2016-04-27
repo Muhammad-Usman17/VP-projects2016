@@ -43,7 +43,7 @@ namespace SerLog
 
             string admin = textBox.Text.ToString();
             string password = passwordBox.Password.ToString();
-            if (admin.Equals(GetSetting("Admin")) && password.Equals(GetSetting("Password")))
+            if (admin.Equals(ConfigUpdate.File.GetSetting("Admin")) && password.Equals(ConfigUpdate.File.GetSetting("Password")))
             {
 
 
@@ -57,10 +57,7 @@ namespace SerLog
             passwordBox.Clear();
 
         }
-        private static string GetSetting(string key)
-        {
-            return ConfigurationManager.AppSettings[key];
-        }
+      
 
      
 

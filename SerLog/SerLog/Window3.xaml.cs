@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Drawing.Printing;
+using System.Drawing;
 
 namespace SerLog
 {
@@ -33,7 +35,7 @@ namespace SerLog
         }
         private void Timer_click(object sender, EventArgs e)
         {
-            readlastError();
+            textBox.Text = Log.func.readlastError();
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -50,27 +52,65 @@ namespace SerLog
         {
             this.Hide();
             Window1 W = new Window1();
-
             W.Show();
             this.Close();
         }
-        public void readlastError()
-        {
 
-            String[] message = new String[3];
-           int  n = 0;
-            List<string> text = File.ReadLines(@"C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\MonitorService\MonitorService\bin\Debug\Logfile.txt").Reverse().Take(3).ToList();
-            foreach(string s in text)
-            {
-                message[n] = s;
-                n++;
-            }
-            textBox.Text = message[2] + Environment.NewLine + message[1] + Environment.NewLine + message[0];
-        }
-
+        Font verdana10Font;
+             StreamReader reader;
         private void button1_Click(object sender, RoutedEventArgs e)
         {
 
+
+            reader = new StreamReader(@"C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\MonitorService\MonitorService\bin\Debug\Logfile.txt");
+            //Create a Verdana font with size 10
+          verdana10Font = new Font("Verdana", 10);
+            //Create a PrintDocument object
+            PrintDocument pd = new PrintDocument();
+            //Add PrintPage event handler
+            pd.PrintPage += new PrintPageEventHandler(this.PrintTextFileHandler);
+            //Call Print Method
+            pd.Print();
+            //Close the reader
+            if (reader != null)
+                reader.Close();
+        }
+        private void PrintTextFileHandler(object sender, PrintPageEventArgs ppeArgs)
+        {
+            //Get the Graphics object
+            Graphics g = ppeArgs.Graphics;
+            float linesPerPage = 0;
+            float yPos = 0;
+            int count = 0;
+            //Read margins from PrintPageEventArgs
+            float leftMargin = ppeArgs.MarginBounds.Left;
+            float topMargin = ppeArgs.MarginBounds.Top;
+            string line = null;
+            //Calculate the lines per page on the basis of the height of the page and the height of the font
+            linesPerPage = ppeArgs.MarginBounds.Height /
+            verdana10Font.GetHeight(g);
+            //Now read lines one by one, using StreamReader
+            while (count < linesPerPage &&
+            ((line = reader.ReadLine()) != null))
+            {
+                //Calculate the starting position
+                yPos = topMargin + (count *
+                verdana10Font.GetHeight(g));
+                //Draw text
+                g.DrawString(line, verdana10Font, System.Drawing.Brushes.Black,
+                leftMargin, yPos, new StringFormat());
+                //Move to next line
+                count++;
+            }
+            //If PrintPageEventArgs has more pages to print
+            if (line != null)
+            {
+                ppeArgs.HasMorePages = true;
+            }
+            else
+            {
+                ppeArgs.HasMorePages = false;
+            }
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
