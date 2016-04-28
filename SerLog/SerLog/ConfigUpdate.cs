@@ -5,14 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SerLog
+namespace SerLog 
 {
     class ConfigUpdate
     {
        private static ConfigUpdate obj;
         private ConfigUpdate()
-        {
-
+        { 
         }
         public static ConfigUpdate File
         {

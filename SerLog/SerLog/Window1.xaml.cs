@@ -42,7 +42,7 @@ namespace SerLog
                 button3.IsEnabled = false;
                 button8.IsEnabled = false;
                 button2.IsEnabled = true;
-                String[] ser = Log.func.readfile();
+                String[] ser = Log.func.readfile(ConfigUpdate.File.GetSetting("MoniterList"));
                 for(int i=0;i<ser.Length;i++)
                 {
                     listView1.Items.Add((String)ser[i]);
@@ -72,12 +72,6 @@ namespace SerLog
             Start();
 
         }
-
-
-
-
-
-       
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -254,7 +248,7 @@ namespace SerLog
                         string[] service = list.ToArray();
                         string[] ser = listtxt.ToArray();
 
-                        Log.func.writefile(ser);
+                        Log.func.writefile(ser, ConfigUpdate.File.GetSetting("MoniterList"));
                         sc.Start(service);
                         sc.WaitForStatus(ServiceControllerStatus.Running);
                         if (sc.Status.Equals(ServiceControllerStatus.Running))
