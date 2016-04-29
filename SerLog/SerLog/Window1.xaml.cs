@@ -126,7 +126,8 @@ namespace SerLog
         private void button6_Click(object sender, RoutedEventArgs e)
         {
 
-           
+            Window4 w = new Window4();
+            w.Show();
 
         }
 

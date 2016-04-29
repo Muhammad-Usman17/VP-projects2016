@@ -84,7 +84,11 @@ namespace SerLog
             ConfigUpdate.File.SetSetting("Password", newpaswword);
             MessageBox.Show("Admin Password is Sucesfully changed");
         }
+
+        private void textBox4_TextChanged(object sender, TextChangedEventArgs e)
+        {
         
         }
+    }
     
 }
