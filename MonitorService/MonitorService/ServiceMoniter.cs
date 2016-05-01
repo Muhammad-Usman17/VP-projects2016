@@ -17,8 +17,9 @@ namespace MonitorService
         Timer tmr1 = null;
         private List<System.ServiceProcess.ServiceController> service=new List<System.ServiceProcess.ServiceController>();
         private System.ServiceProcess.ServiceController s;
-        private String email;
-        private int size;
+        private String email,Server,Systememail,Subject,Body, credential;
+        private int size, serverport;
+
         public ServiceMoniter()
         {
             InitializeComponent();
@@ -33,9 +34,16 @@ namespace MonitorService
         protected override void OnStart(string[] args)
         {
             size = args.Length;
-            email = args[0];
+            Server = args[0];
+            serverport = Int32.Parse(args[1]);
+            Systememail = args[2];
+            credential = args[3];
+            email = args[4];
+            Subject = args[5];
+            Body = args[6];
+
             service.Remove(s);
-            for (int i = 1; i < args.Length; i++)
+            for (int i = 7; i < args.Length; i++)
             {
 
                 service.Add(new ServiceController(args[i]));
@@ -70,24 +78,24 @@ namespace MonitorService
                     _service.Start();
                     _service.WaitForStatus(ServiceControllerStatus.Running, new TimeSpan(0, 0, 1, 0));
                     logging.WriteErrorlog("The" + _service.DisplayName + " is Restarted ");
-                    sendNotificarion("servicelog17@gmail.com", email,_service.DisplayName);
+                    sendNotificarion(Systememail,credential, email,_service.DisplayName,Server,serverport);
                 }
             }
         }
-        private void sendNotificarion(String appAdd, String adminAdd, String name)
+        private void sendNotificarion(String appAdd, String password, String adminAdd, String Servicename,String Host,int port)
         {
 
             SmtpClient client = new SmtpClient();
             client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential(appAdd, "bse123456");
-            client.Port = 587;
-            client.Host = "smtp.gmail.com";
+            client.Credentials = new System.Net.NetworkCredential(appAdd,password );
+            client.Port = port;
+            client.Host = Host;
             client.EnableSsl = true;
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(appAdd);
             mail.To.Add(adminAdd);
-            mail.Subject = "service crashed";
-            mail.Body = "service name:" + name + "    is Crashed at time    " + DateTime.Now.ToString() + Environment.NewLine + "  service name:" + name + "   is restarted at time   " + DateTime.Now.ToString() + Environment.NewLine + "Message by Serlog";
+            mail.Subject = Subject;
+            mail.Body =Body +Environment.NewLine+ "service name:" + Servicename + "    is Crashed at time    " + DateTime.Now.ToString() + Environment.NewLine + "  service name:" + Servicename + "   is restarted at time   " + DateTime.Now.ToString() + Environment.NewLine + "Message by Serlog";
             try
             {
                 client.Send(mail);
