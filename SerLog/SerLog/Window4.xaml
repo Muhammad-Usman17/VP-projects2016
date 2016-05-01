@@ -27,12 +27,12 @@
             <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="27,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Background="#FFD9F0F5"/>
             <Label x:Name="label5" Content="Body:" HorizontalAlignment="Left" Margin="25,217,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="64" Margin="29,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="470" Background="#FFD9F0F5"/>
-            <Button x:Name="button" Content="Test" HorizontalAlignment="Left" Margin="241,320,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="button" Content="Test" HorizontalAlignment="Left" Margin="241,320,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
             <Button x:Name="button1" Content="Ok" HorizontalAlignment="Left" Margin="328,320,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-            <Button x:Name="button2" Content="Cancel" HorizontalAlignment="Left" Margin="417,320,0,0" VerticalAlignment="Top" Width="75"/>
-            <GroupBox x:Name="groupBox" Header="Sender" HorizontalAlignment="Left" Margin="11,13,0,0" VerticalAlignment="Top" Height="72" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold"/>
-            <GroupBox x:Name="groupBox1" Header="Recipient" HorizontalAlignment="Left" Margin="13,81,0,0" VerticalAlignment="Top" Height="78" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold"/>
-            <GroupBox x:Name="groupBox2" Header="Message" HorizontalAlignment="Left" Margin="11,157,0,0" VerticalAlignment="Top" Height="156" Width="497" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}"/>
+            <Button x:Name="button2" Content="Cancel" HorizontalAlignment="Left" Margin="417,320,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+            <GroupBox x:Name="groupBox" Header="Sender" HorizontalAlignment="Left" Margin="14,13,0,0" VerticalAlignment="Top" Height="72" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold"/>
+            <GroupBox x:Name="groupBox1" Header="Recipient" HorizontalAlignment="Left" Margin="13,82,0,0" VerticalAlignment="Top" Height="78" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold"/>
+            <GroupBox x:Name="groupBox2" Header="Message" HorizontalAlignment="Left" Margin="11,156,0,0" VerticalAlignment="Top" Height="156" Width="497" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}"/>
             <Label x:Name="label6" Content="Email Setting" HorizontalAlignment="Left" Margin="200,-1,0,0" VerticalAlignment="Top" Width="106" FontFamily="Arial Black"/>
 
 

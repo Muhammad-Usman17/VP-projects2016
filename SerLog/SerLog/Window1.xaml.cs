@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.ServiceProcess;
 using System.Configuration;
 using System.IO;
+using System.Diagnostics;
 
 namespace SerLog
 {
@@ -43,12 +44,12 @@ namespace SerLog
                 button8.IsEnabled = false;
                 button2.IsEnabled = true;
                 String[] ser = Log.func.readfile(ConfigUpdate.File.GetSetting("MoniterList"));
-                for(int i=0;i<ser.Length;i++)
+                for (int i = 0; i < ser.Length; i++)
                 {
                     listView1.Items.Add((String)ser[i]);
                 }
-                
-                
+
+
 
             }
 
@@ -60,7 +61,6 @@ namespace SerLog
         {
             this.Hide();
             Window2 W2 = new Window2();
-
 
             W2.Show();
             this.Close();
@@ -122,12 +122,26 @@ namespace SerLog
 
             }
         }
+        private void ConfigurationSetting(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Window2 W2 = new Window2();
+            W2.Show();
+            this.Close();
 
+
+        }
+        private void EmailSetting(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Window4 W4 = new Window4();
+            W4.Show();
+            this.Close();
+
+        }
         private void button6_Click(object sender, RoutedEventArgs e)
         {
 
-            Window4 w = new Window4();
-            w.Show();
 
         }
 
@@ -162,7 +176,8 @@ namespace SerLog
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
-        { if ((string)listBox.SelectedItem != ("") && (string)listBox.SelectedItem != null)
+        {
+            if ((string)listBox.SelectedItem != ("") && (string)listBox.SelectedItem != null)
             {
                 if (listView1.Items.Contains((string)listBox.SelectedItem))
                 {
@@ -180,7 +195,7 @@ namespace SerLog
         {
             listView1.Items.Remove((string)listView1.SelectedItem);
         }
-   
+
         public void Stop()
 
         {
@@ -233,10 +248,13 @@ namespace SerLog
                     {
                         List<string> list = new List<string>();
                         List<string> listtxt = new List<string>();
+                        list.Add(ConfigUpdate.File.GetSetting("mailhost"));
+                        list.Add(ConfigUpdate.File.GetSetting("port"));
+                        list.Add(ConfigUpdate.File.GetSetting("SystemMail"));
+                        list.Add(ConfigUpdate.File.GetSetting("Systempassword"));
                         list.Add(ConfigUpdate.File.GetSetting("AdminEMail"));
-
-
-
+                        list.Add(ConfigUpdate.File.GetSetting("subject"));
+                        list.Add(ConfigUpdate.File.GetSetting("body"));
                         string item = string.Empty;
                         for (int i = 0; i < listView1.Items.Count; i++)
                         {
@@ -272,9 +290,29 @@ namespace SerLog
                     sc.Close();
                 }
             }
-        
+
             else
                 MessageBox.Show("You Must have to select atleast one Service before Start");
+        }
+        private void Open(object sender, RoutedEventArgs e)
+        {
+            Process.Start(ConfigUpdate.File.GetSetting("LogFilePath"));
+        }
+        private void Print(object sender, RoutedEventArgs e)
+        {
+            Log.func.PrintFile(ConfigUpdate.File.GetSetting("LogFilePath"));
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure to Clear the logfile?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                File.WriteAllText(ConfigUpdate.File.GetSetting("LogFilePath"), String.Empty);
+
+            }
+        }
     }
 }
-}
+
+

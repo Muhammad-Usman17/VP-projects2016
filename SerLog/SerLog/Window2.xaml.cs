@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -25,13 +26,25 @@ namespace SerLog
         public Window2()
         {
             InitializeComponent();
-        }
 
+            this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
+        }
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            textBox1.Text = ConfigUpdate.File.GetSetting("Admin");
+            textBox2.Text= ConfigUpdate.File.GetSetting("Password");
+            textBox3.Text= ConfigUpdate.File.GetSetting("mailhost");
+            textBox4.Text = ConfigUpdate.File.GetSetting("port");
+            textBox.Text= ConfigUpdate.File.GetSetting("Systempassword");
+           
+        }
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
+       
 
+        
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -88,6 +101,21 @@ namespace SerLog
         private void textBox4_TextChanged(object sender, TextChangedEventArgs e)
         {
         
+        }
+
+        private void textBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            ConfigUpdate.File.SetSetting("Admin",textBox1.Text.ToString());
+            ConfigUpdate.File.SetSetting("Password", textBox2.Text.ToString());
+            ConfigUpdate.File.SetSetting("mailhost", textBox3.Text.ToString());
+            ConfigUpdate.File.SetSetting("port", textBox4.Text.ToString());
+            ConfigUpdate.File.SetSetting("Systempassword",textBox.Text.ToString());
+            MessageBox.Show("Sucessfully Saved");
         }
     }
     

@@ -49,10 +49,14 @@
                     <MenuItem Header="Exit" Click="exit"/>
                 </MenuItem>
                 <MenuItem Header="View" Click="MenuItem_Click_1">
-                    <MenuItem Header="view Log"/>
-                    <MenuItem Header="Log print"/>
+                    <MenuItem Header="view Log" Click=" Open"/>
+                    <MenuItem Header="Log print" Click="Print"/>
+                    <MenuItem Header="Delete log" Click="Delete"/>
                 </MenuItem>
-                <MenuItem Header="Setting" Click="MenuItem_Click"/>
+                <MenuItem Header="Setting" >
+                    <MenuItem Header="Configuration Setting" Click="ConfigurationSetting"/>
+                    <MenuItem Header="Email Setting"  Click="EmailSetting"/>
+                </MenuItem>
             </Menu>
             <Separator HorizontalAlignment="Left" Height="100" Margin="-1,99,0,0" VerticalAlignment="Top" Width="554" RenderTransformOrigin="0.502,0.423" Grid.RowSpan="2" Background="#FF804545">
                 <Separator.RenderTransform>
@@ -64,7 +68,7 @@
                     </TransformGroup>
                 </Separator.RenderTransform>
             </Separator>
-            <Button x:Name="button1" Content="Log Setting" HorizontalAlignment="Left" Margin="358,32,0,0" VerticalAlignment="Top" Width="101" Height="38" Click="button1_Click">
+            <Button x:Name="button1" Content="Email Setting" HorizontalAlignment="Left" Margin="358,32,0,0" VerticalAlignment="Top" Width="101" Height="38" Click="button1_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
                     

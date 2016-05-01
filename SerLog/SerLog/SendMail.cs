@@ -30,18 +30,18 @@ namespace SerLog
 
         public void sendNotification(String appAdd, String adminAdd)
         {
-
+        
             SmtpClient client = new SmtpClient();
             client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential(appAdd, "bse123456");
-            client.Port = 587;
-            client.Host = "smtp.gmail.com";
+            client.Credentials = new System.Net.NetworkCredential(appAdd, ConfigUpdate.File.GetSetting("Systempassword"));
+            client.Port = Int32.Parse(ConfigUpdate.File.GetSetting("port"));
+            client.Host = ConfigUpdate.File.GetSetting("mailhost");
             client.EnableSsl = true;
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(appAdd);
             mail.To.Add(adminAdd);
-            mail.Subject = "Email testing";
-            mail.Body = "serlog verification test";
+            mail.Subject = ConfigUpdate.File.GetSetting("subject");
+            mail.Body = (ConfigUpdate.File.GetSetting("body"));
             try
             {
                 client.Send(mail);

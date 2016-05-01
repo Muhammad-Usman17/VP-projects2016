@@ -16,25 +16,21 @@
                     <GradientStop Color="#FF93E4E4" Offset="0.191"/>
                 </LinearGradientBrush>
             </Grid.Background>
-
-
-            <Label x:Name="label" Content="Email Address" HorizontalAlignment="Left" Margin="18,141,0,0" VerticalAlignment="Top" Width="89"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="103,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" TextChanged="textBox_TextChanged" Background="#FFD9F0F5"/>
-            <Button x:Name="button" Content="Save " HorizontalAlignment="Left" Margin="337,144,0,121" Width="63" Click="button_Click"/>
             <Label x:Name="label1" Content="Change Setting" HorizontalAlignment="Left" Margin="160,-4,0,0" VerticalAlignment="Top" Width="94"/>
             <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="-3,0,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-            <Button x:Name="button2" Content="Test Email" HorizontalAlignment="Left" Margin="98,248,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="button2_Click_1"/>
             <Label x:Name="label2" Content="Admin Name" HorizontalAlignment="Left" Margin="20,66,0,0" VerticalAlignment="Top" Width="79"/>
-            <Label x:Name="label3" Content="Password" HorizontalAlignment="Left" Margin="20,102,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="104,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" Background="#FFD9F0F5"/>
-            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="103,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Background="#FFD9F0F5"/>
-            <Button x:Name="button3" Content="Save" HorizontalAlignment="Left" Margin="336,67,0,0" VerticalAlignment="Top" Width="64" Click="button3_Click"/>
-            <Button x:Name="button4" Content="Save" HorizontalAlignment="Left" Margin="336,106,0,0" VerticalAlignment="Top" Width="65" Click="button4_Click"/>
-            <Label x:Name="label4" Content="Email server" HorizontalAlignment="Left" Margin="12,188,0,0" VerticalAlignment="Top" Width="75"/>
-            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="87,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Background="#FFD9F0F5"/>
-            <Label x:Name="label5" Content="Port" HorizontalAlignment="Left" Margin="287,189,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="318,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" TextChanged="textBox4_TextChanged" Background="#FFD9F0F5"/>
-            <Button x:Name="button5" Content="Button" HorizontalAlignment="Left" Margin="302,248,0,0" VerticalAlignment="Top" Width="75"/>
+            <Label x:Name="label3" Content="Password" HorizontalAlignment="Left" Margin="228,64,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="104,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Background="#FFD9F0F5"/>
+            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="286,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFD9F0F5"/>
+            <Label x:Name="label4" Content="Email server" HorizontalAlignment="Left" Margin="17,147,0,0" VerticalAlignment="Top" Width="75"/>
+            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="98,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Background="#FFD9F0F5"/>
+            <Label x:Name="label5" Content="Port" HorizontalAlignment="Left" Margin="283,147,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="318,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" TextChanged="textBox4_TextChanged" Background="#FFD9F0F5"/>
+            <Button x:Name="button5" Content="Save" HorizontalAlignment="Left" Margin="180,248,0,0" VerticalAlignment="Top" Width="75" Click="button5_Click"/>
+            <Label x:Name="label" Content="System Email Password" HorizontalAlignment="Left" Margin="17,192,0,0" VerticalAlignment="Top" Width="142"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="158,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" TextChanged="textBox_TextChanged_1" Background="#FFD9F0F5"/>
+            <GroupBox x:Name="groupBox" Header="Application" HorizontalAlignment="Left" Margin="12,35,0,0" VerticalAlignment="Top" Height="81" Width="403"/>
+            <GroupBox x:Name="groupBox1" Header="Mail Server" HorizontalAlignment="Left" Margin="11,130,0,0" VerticalAlignment="Top" Height="101" Width="400"/>
 
         </Grid>
     </Viewbox>
