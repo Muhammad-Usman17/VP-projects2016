@@ -21,8 +21,8 @@
                 <RowDefinition Height="188*"/>
             </Grid.RowDefinitions>
             <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="22,41,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="button_Click">
-         
-               
+
+
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.236"/>
@@ -58,7 +58,7 @@
                     <MenuItem Header="Email Setting"  Click="EmailSetting"/>
                 </MenuItem>
             </Menu>
-            <Separator HorizontalAlignment="Left" Height="100" Margin="-1,99,0,0" VerticalAlignment="Top" Width="554" RenderTransformOrigin="0.502,0.423" Grid.RowSpan="2" Background="#FF804545">
+            <Separator HorizontalAlignment="Left" Height="100" Margin="27,16,-28,0" VerticalAlignment="Top" Width="554" RenderTransformOrigin="0.502,0.423" Background="#FF804545">
                 <Separator.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -71,9 +71,9 @@
             <Button x:Name="button1" Content="Email Setting" HorizontalAlignment="Left" Margin="358,32,0,0" VerticalAlignment="Top" Width="101" Height="38" Click="button1_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
-                    
+
                 </Button.Effect>
-              
+
             </Button>
             <Button x:Name="button2" Content="Stop" HorizontalAlignment="Left" Margin="138,41,0,0" VerticalAlignment="Top" Width="90" Height="26" Click="button2_Click">
                 <Button.Background>
@@ -82,7 +82,7 @@
                         <GradientStop Color="#FFEE7575"/>
                     </LinearGradientBrush>
                 </Button.Background>
-               
+
             </Button>
 
             <Button x:Name="button4" Content="Log View" HorizontalAlignment="Left" Margin="357,82,0,0" VerticalAlignment="Top" Width="104" Height="39" Click="button4_Click">
@@ -111,7 +111,7 @@
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
                 </Button.OpacityMask>
             </Button>
-            <Button x:Name="button6" Content="Remove" HorizontalAlignment="Left" Margin="139,80,0,0" VerticalAlignment="Top" Width="87" Height="26" Click="button6_Click"/>
+            <Button x:Name="button6" Content="Install" HorizontalAlignment="Left" Margin="25,96,0,0" VerticalAlignment="Top" Width="87" Height="26" Click="button6_Click"/>
             <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="148" Margin="16,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="176" SelectionChanged="listBox_SelectionChanged" Background="#FFF0D7D7"/>
             <Button x:Name="button7" Content="Show" HorizontalAlignment="Left" Margin="97,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button7_Click" ToolTip="List down all Services"/>
             <Button x:Name="button3" Content="Add" HorizontalAlignment="Left" Margin="212,75,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button3_Click"/>

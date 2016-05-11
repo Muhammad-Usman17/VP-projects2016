@@ -16,6 +16,7 @@ using System.ServiceProcess;
 using System.Configuration;
 using System.IO;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace SerLog
 {
@@ -28,6 +29,7 @@ namespace SerLog
         public Window1()
         {
             InitializeComponent();
+          
             sc = new System.ServiceProcess.ServiceController("ServiceMoniter");
             if (sc.Status.Equals(ServiceControllerStatus.Stopped))
             {
@@ -141,9 +143,13 @@ namespace SerLog
         }
         private void button6_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
+            Window5 W5 = new Window5();
+            W5.Show();
+            this.Close();
 
         }
+       
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -172,7 +178,7 @@ namespace SerLog
 
         private void listView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+          
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
@@ -311,6 +317,16 @@ namespace SerLog
                 File.WriteAllText(ConfigUpdate.File.GetSetting("LogFilePath"), String.Empty);
 
             }
+        }
+
+        private void button9_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void frame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
         }
     }
 }
