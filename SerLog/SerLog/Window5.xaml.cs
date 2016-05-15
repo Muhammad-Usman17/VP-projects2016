@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,9 +21,20 @@ namespace SerLog
     /// </summary>
     public partial class Window5 : Window
     {
+        List<string> allservices;
         public Window5()
         {
             InitializeComponent();
+            allservices = new List<string>();
+            System.ServiceProcess.ServiceController[] services;
+            services = System.ServiceProcess.ServiceController.GetServices();
+            allservices.Clear();
+            for (int i = 0; i < services.Length; i++)
+            {
+                allservices.Add(services[i].ServiceName);
+            }
+            listBox.Visibility = Visibility.Collapsed;
+
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -46,7 +58,7 @@ namespace SerLog
                 catch(Exception t)
                 {
                     MessageBox.Show(t.Message);
-                }
+                } 
             }
            
         }
@@ -83,7 +95,77 @@ namespace SerLog
         public void InstallService(string pathToAssembly)
         {
             System.Configuration.Install.ManagedInstallerClass.InstallHelper(new string[] { pathToAssembly });
+            //System.Configuration.Install.ManagedInstallerClass
+            //                .InstallHelper(new string[] { "/u", pathToAssembly });
             MessageBox.Show("DONE");
+           
         }
+        public void Uninstall(String Sname)
+        {
+          
+        }
+
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            String typed = textBox1.Text;
+            List<String> auto = new List<string>();
+            auto.Clear();
+            foreach(String item in allservices)
+            {
+                if(!String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if(item.StartsWith(typed))
+                    {
+                        auto.Add(item);
+                    }
+                }
+               
+            }
+            if (auto.Count > 0)
+            {
+                listBox.ItemsSource = auto;
+                listBox.Visibility = Visibility.Visible;
+            }
+            else if (textBox1.Text.Equals(""))
+            {
+                
+                listBox.Visibility = Visibility.Collapsed;
+                listBox.ItemsSource =null;
+            }
+            else
+            {
+                listBox.Visibility = Visibility.Collapsed;
+                listBox.ItemsSource = null;
+
+            }
+
+
+
+
+        }
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(listBox.ItemsSource !=null)
+            {
+                listBox.Visibility = Visibility.Collapsed;
+                textBox1.TextChanged -= new TextChangedEventHandler(textBox1_TextChanged);
+                if(listBox.SelectedIndex!=-1)
+                {
+                    textBox1.Text = listBox.SelectedItem.ToString();
+                }
+                textBox1.TextChanged += new TextChangedEventHandler(textBox1_TextChanged);
+            }
+
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            Log.func.writefilebat(textBox1.Text, ConfigUpdate.File.GetSetting("BatFilePath"));
+            System.Diagnostics.Process Proc = new System.Diagnostics.Process();
+            Proc.StartInfo.FileName = ConfigUpdate.File.GetSetting("BatFilePath");
+            Proc.Start();
+        }
+
+        
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -53,18 +54,25 @@ namespace SerLog
                 MessageBox.Show(e.InnerException.Message);
             }
         }
-        public bool IsValidEmail(string email)
+        public bool emailIsValid(string email)
         {
-            try
+            string expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
+                if (Regex.Replace(email, expresion, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            catch
+            else
             {
                 return false;
             }
-
         }
     }
 }

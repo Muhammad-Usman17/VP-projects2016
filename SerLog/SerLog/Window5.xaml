@@ -15,12 +15,18 @@
                     <GradientStop Color="#FF93E4E4" Offset="0.191"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Label x:Name="label" Content="Service Install" HorizontalAlignment="Left" Margin="173,10,0,0" VerticalAlignment="Top" Height="49" Width="218" FontFamily="Segoe WP Black" FontSize="26.667"/>
-            <Label x:Name="label1" Content="Service  Location" HorizontalAlignment="Left" Margin="17,161,0,0" VerticalAlignment="Top" Width="111"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="65" Margin="127,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" TextChanged="textBox_TextChanged"/>
-            <Button x:Name="button" Content="Browse......." HorizontalAlignment="Left" Margin="436,165,0,0" VerticalAlignment="Top" Width="62" Click="button_Click" Height="22"/>
-            <Button x:Name="button1" Content="OK" HorizontalAlignment="Left" Margin="169,274,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-            <Button x:Name="button2" Content="Cancel" HorizontalAlignment="Left" Margin="293,276,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+            <Label x:Name="label" Content="Service Configuration" HorizontalAlignment="Left" Margin="112,10,0,0" VerticalAlignment="Top" Height="49" Width="309" FontFamily="Segoe WP Black" FontSize="26.667"/>
+            <Label x:Name="label1" Content="Service  Location" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="111"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="48" Margin="126,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" TextChanged="textBox_TextChanged"/>
+            <Button x:Name="button" Content="Browse......." HorizontalAlignment="Left" Margin="444,86,0,0" VerticalAlignment="Top" Width="62" Click="button_Click" Height="22"/>
+            <Button x:Name="button1" Content="Install" HorizontalAlignment="Left" Margin="227,157,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+            <Button x:Name="button2" Content="Cancel" HorizontalAlignment="Left" Margin="410,304,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+            <Label x:Name="label2" Content="Service name" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Width="94"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="19" Margin="126,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" TextChanged="textBox1_TextChanged"/>
+            <Button x:Name="button3" Content="Uninstall" HorizontalAlignment="Left" Margin="227,257,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
+            <GroupBox x:Name="groupBox" Header="Install Service" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Height="118" Width="506"/>
+            <GroupBox x:Name="groupBox1" Header="Uninstall Service" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Width="506" Height="112"/>
+            <ListBox x:Name="listBox" HorizontalAlignment="Left" Margin="126,224,0,50" Width="295" Background="#FFDAD2D2" SelectionChanged="listBox_SelectionChanged"/>
         </Grid>
     </Viewbox>
 </Window>

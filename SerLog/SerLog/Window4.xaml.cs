@@ -38,13 +38,41 @@ namespace SerLog
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-          
-            ConfigUpdate.File.SetSetting("SystemMail",textBox1.Text);
-       
-            ConfigUpdate.File.SetSetting("AdminEMail",textBox3.Text);
-            ConfigUpdate.File.SetSetting("subject",textBox4.Text);
-            ConfigUpdate.File.SetSetting("body",textBox5.Text);
-            MessageBox.Show("Sucessfully Saved");
+            if (SendMail.mail.emailIsValid(textBox1.Text) && SendMail.mail.emailIsValid(textBox3.Text))
+            {
+                ConfigUpdate.File.SetSetting("SystemMail", textBox1.Text);
+
+                ConfigUpdate.File.SetSetting("AdminEMail", textBox3.Text);
+                ConfigUpdate.File.SetSetting("subject", textBox4.Text);
+                ConfigUpdate.File.SetSetting("body", textBox5.Text);
+                MessageBox.Show("Sucessfully Saved");
+            }
+            else
+            {
+                 if (!SendMail.mail.emailIsValid(textBox1.Text) && !SendMail.mail.emailIsValid(textBox3.Text))
+                {
+                    textBox1.Focus();
+                   MessageBox.Show("you entered Invalid SystemMail Address and AdminEMail");
+
+                }
+              else  if (!SendMail.mail.emailIsValid(textBox1.Text))
+                {
+                    textBox1.Focus();
+                    MessageBox.Show("you entered Invalid SystemMail Address ");
+                }
+
+               else if (!SendMail.mail.emailIsValid(textBox3.Text))
+                {
+                    textBox3.Focus();
+
+                    MessageBox.Show("you entered Invalid AdminEMail Address ");
+                }
+             
+
+
+
+
+            }
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)

@@ -29,13 +29,16 @@ namespace SerLog
         public Window1()
         {
             InitializeComponent();
-          
+           
+
             sc = new System.ServiceProcess.ServiceController("ServiceMoniter");
             if (sc.Status.Equals(ServiceControllerStatus.Stopped))
             {
                 button.IsEnabled = true;
                 button3.IsEnabled = true;
                 button8.IsEnabled = true;
+                button6.IsEnabled = true;
+                button9.IsEnabled = true;
                 button2.IsEnabled = false;
 
             }
@@ -44,6 +47,8 @@ namespace SerLog
                 button.IsEnabled = false;
                 button3.IsEnabled = false;
                 button8.IsEnabled = false;
+                button6.IsEnabled = false;
+                button9.IsEnabled = false;
                 button2.IsEnabled = true;
                 String[] ser = Log.func.readfile(ConfigUpdate.File.GetSetting("MoniterList"));
                 for (int i = 0; i < ser.Length; i++)
@@ -68,6 +73,7 @@ namespace SerLog
             this.Close();
 
         }
+       
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -216,6 +222,8 @@ namespace SerLog
                     button.IsEnabled = true;
                     button3.IsEnabled = true;
                     button8.IsEnabled = true;
+                    button6.IsEnabled = true;
+                    button9.IsEnabled = true;
                     button2.IsEnabled = false;
 
 
@@ -232,6 +240,7 @@ namespace SerLog
 
         }
 
+
         public void Start()
         {
             if (listView1.Items.Count != 0)
@@ -246,6 +255,8 @@ namespace SerLog
                         button.IsEnabled = false;
                         button3.IsEnabled = false;
                         button8.IsEnabled = false;
+                        button6.IsEnabled = false;
+                        button9.IsEnabled = false;
                         button2.IsEnabled = true;
 
 
@@ -281,6 +292,8 @@ namespace SerLog
                             button.IsEnabled = false;
                             button3.IsEnabled = false;
                             button8.IsEnabled = false;
+                            button6.IsEnabled = false;
+                            button9.IsEnabled = false;
                             button2.IsEnabled = true;
 
                         }
@@ -321,13 +334,18 @@ namespace SerLog
 
         private void button9_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
+            Window5 W5 = new Window5();
+            W5.Show();
+            this.Close();
         }
 
         private void frame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
 
         }
+
+      
     }
 }
 

@@ -72,6 +72,17 @@ namespace SerLog
             }
 
         }
+        public void writefilebat(String Service, String Filepath)
+        {
+
+            using (StreamWriter write = new StreamWriter(Filepath))
+            {
+
+                write.WriteLine("SC delete " +Service);
+            }
+        }
+
+        
         public String readlastError()
         {
             
@@ -144,6 +155,8 @@ namespace SerLog
                 ppeArgs.HasMorePages = false;
             }
         }
+
+        
 
     }
 }

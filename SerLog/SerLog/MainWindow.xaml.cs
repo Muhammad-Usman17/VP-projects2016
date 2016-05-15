@@ -25,11 +25,12 @@ namespace SerLog
         public MainWindow()
         {
             InitializeComponent();
+
             timer.Tick += new EventHandler(Timer_click);
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
-           
-                
+
+            textBox.Focus();
                 
             
         }

@@ -64,7 +64,7 @@ namespace SerLog
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string newmail = textBox.Text.ToString();
-            if (!SendMail.mail.IsValidEmail(newmail))
+            if (!SendMail.mail.emailIsValid(newmail)) 
             {
                 MessageBox.Show("You enter the invalid email!!");
             }

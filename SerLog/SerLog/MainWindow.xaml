@@ -14,7 +14,7 @@
                 <GradientStop Color="#FF8ACCCF" Offset="0.191"/>
             </LinearGradientBrush>
         </Viewbox.OpacityMask>
-        <Grid Height="355" Width="531">
+        <Grid Height="355" Width="531" RenderTransformOrigin="0.652,0.652">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF575F72" Offset="0.983"/>
@@ -24,9 +24,9 @@
             <Label x:Name="label" Content="SerLog" HorizontalAlignment="Center" Margin="215,8,202,266" VerticalAlignment="Center" FontSize="26.667" Height="45" Width="100" FontFamily="Imprint MT Shadow" FontStretch="Condensed"/>
             <Label x:Name="label1" Content="Admin" HorizontalAlignment="Left" Margin="162,125,0,0" VerticalAlignment="Top" Width="67" FontFamily="Arial Rounded MT Bold"/>
             <Label x:Name="label2" Content="Password" HorizontalAlignment="Left" Margin="158,164,0,0" VerticalAlignment="Top" Width="69" FontFamily="Arial Rounded MT Bold"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="241,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="Snow"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="25" Margin="241,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="Snow" />
             <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="242,167,0,0" VerticalAlignment="Top" Width="119"/>
-            <Button x:Name="button" Content="Sign in" HorizontalAlignment="Left" Margin="331,215,0,0" VerticalAlignment="Top" Width="60" Height="27" Click="button_Click"/>
+            <Button x:Name="button" Content="Sign in" HorizontalAlignment="Left" Margin="351,223,0,0" VerticalAlignment="Top" Width="60" Height="27" Click="button_Click"/>
             <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="334,-3,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.038" Width="180" Height="27" FontSize="9.333" FontFamily="Sitka Small"/>
 
         </Grid>
