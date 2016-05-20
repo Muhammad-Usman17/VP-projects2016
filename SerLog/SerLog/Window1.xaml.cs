@@ -29,7 +29,7 @@ namespace SerLog
         public Window1()
         {
             InitializeComponent();
-           
+
 
             sc = new System.ServiceProcess.ServiceController("ServiceMoniter");
             if (sc.Status.Equals(ServiceControllerStatus.Stopped))
@@ -177,6 +177,11 @@ namespace SerLog
             listBox.Items.Clear();
             for (int i = 0; i < services.Length; i++)
             {
+                if (services[i].ServiceName== "ServiceMoniter")
+                {
+
+                }
+                else
                 listBox.Items.Add(services[i].ServiceName);
             }
 

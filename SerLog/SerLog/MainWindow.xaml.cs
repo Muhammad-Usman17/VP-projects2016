@@ -42,20 +42,20 @@ namespace SerLog
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
-            string admin = textBox.Text.ToString();
-            string password = passwordBox.Password.ToString();
-            if (admin.Equals(ConfigUpdate.File.GetSetting("Admin")) && password.Equals(ConfigUpdate.File.GetSetting("Password")))
-            {
+            //string admin = textBox.Text.ToString();
+            //string password = passwordBox.Password.ToString();
+            //if (admin.Equals(ConfigUpdate.File.GetSetting("Admin")) && password.Equals(ConfigUpdate.File.GetSetting("Password")))
+            //{
 
 
                 Window1 W = new Window1();
                 W.Show();
                 this.Hide();
                 this.Close();
-            }
-            else
-                MessageBox.Show("admin or passsword is wrong!!");
-            passwordBox.Clear();
+            //}
+            //else
+            //    MessageBox.Show("admin or passsword is wrong!!");
+            //passwordBox.Clear();
 
         }
       

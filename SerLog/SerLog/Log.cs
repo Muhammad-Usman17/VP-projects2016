@@ -78,11 +78,13 @@ namespace SerLog
             using (StreamWriter write = new StreamWriter(Filepath))
             {
 
-                write.WriteLine("SC delete " +Service);
+                write.WriteLine("SC delete " + Service);
+
             }
+
         }
 
-        
+
         public String readlastError()
         {
             

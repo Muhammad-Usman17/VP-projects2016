@@ -100,7 +100,11 @@ namespace SerLog
 
         private void textBox4_TextChanged(object sender, TextChangedEventArgs e)
         {
-        
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox4.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers input like (8080,587)etc.");
+                textBox4.Clear();
+            }
         }
 
         private void textBox_TextChanged_1(object sender, TextChangedEventArgs e)

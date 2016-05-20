@@ -31,6 +31,11 @@ namespace SerLog
             allservices.Clear();
             for (int i = 0; i < services.Length; i++)
             {
+                if(services[i].ServiceName=="ServiceMoniter")
+                {
+
+                }
+                else
                 allservices.Add(services[i].ServiceName);
             }
             listBox.Visibility = Visibility.Collapsed;
@@ -97,7 +102,7 @@ namespace SerLog
             System.Configuration.Install.ManagedInstallerClass.InstallHelper(new string[] { pathToAssembly });
             //System.Configuration.Install.ManagedInstallerClass
             //                .InstallHelper(new string[] { "/u", pathToAssembly });
-            MessageBox.Show("DONE");
+            MessageBox.Show("Installed Sucessfully...");
            
         }
         public void Uninstall(String Sname)
@@ -160,12 +165,37 @@ namespace SerLog
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            Log.func.writefilebat(textBox1.Text, ConfigUpdate.File.GetSetting("BatFilePath"));
-            System.Diagnostics.Process Proc = new System.Diagnostics.Process();
-            Proc.StartInfo.FileName = ConfigUpdate.File.GetSetting("BatFilePath");
-            Proc.Start();
+            Boolean check= false;
+            foreach (string itm in allservices)
+            {
+                if (textBox1.Text != itm)
+                    check = false;
+                else
+                {
+                    check = true;
+                    break;
+                }
+            }
+
+            if (check == true)
+            {
+                Log.func.writefilebat(textBox1.Text, ConfigUpdate.File.GetSetting("BatFilePath"));
+                System.Diagnostics.Process Proc = new System.Diagnostics.Process();
+                Proc.StartInfo.FileName = ConfigUpdate.File.GetSetting("BatFilePath");
+                Proc.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                Proc.Start();
+                MessageBox.Show("Uninstalled Sucessfully...");
+            }
+            else
+                MessageBox.Show("ERR0R ! You entered invalid Service ...");
+
+
+
+            }
+
+
+
         }
 
         
     }
-}
