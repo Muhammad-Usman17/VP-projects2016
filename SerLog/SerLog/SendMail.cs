@@ -54,6 +54,31 @@ namespace SerLog
                 MessageBox.Show(e.InnerException.Message);
             }
         }
+        public void sendNotification(String body ,String appAdd, String adminAdd)
+        {
+
+            SmtpClient client = new SmtpClient();
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential(appAdd, ConfigUpdate.File.GetSetting("Systempassword"));
+            client.Port = Int32.Parse(ConfigUpdate.File.GetSetting("port"));
+            client.Host = ConfigUpdate.File.GetSetting("mailhost");
+            client.EnableSsl = true;
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(appAdd);
+            mail.To.Add(adminAdd);
+            mail.Subject = ConfigUpdate.File.GetSetting("subject");
+            mail.Body = (body);
+            try
+            {
+                client.Send(mail);
+             
+            }
+            catch (SmtpException e)
+            {
+
+                MessageBox.Show(e.InnerException.Message);
+            }
+        }
         public bool emailIsValid(string email)
         {
             string expresion;

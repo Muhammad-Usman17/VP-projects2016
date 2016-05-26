@@ -44,7 +44,6 @@ C:\Users\Muhammad_Usman\Desktop\VP-projects2016-7695a3086a4f898f6be6b371cbd1a545
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\SerLog.exe.config
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\SerLog.exe
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\SerLog.pdb
-C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.pdb
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\MainWindow.g.cs
 C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\obj\Debug\Window1.g.cs

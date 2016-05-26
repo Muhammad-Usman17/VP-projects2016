@@ -58,9 +58,12 @@ namespace SerLog
             //passwordBox.Clear();
 
         }
-      
 
-     
-
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            string Password = "Your Password is  " + ConfigUpdate.File.GetSetting("Password");
+            SendMail.mail.sendNotification(Password, ConfigUpdate.File.GetSetting("SystemMail"), ConfigUpdate.File.GetSetting("AdminEMail"));
+            MessageBox.Show("Password details are sent to your Email address");
+        }
     }
 }

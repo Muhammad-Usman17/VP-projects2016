@@ -11,8 +11,8 @@
         <Grid Height="349" Width="516">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF575F72" Offset="0.978"/>
-                    <GradientStop Color="#FF93E4E4" Offset="0.191"/>
+                    <GradientStop Color="#FF152840" Offset="0.983"/>
+                    <GradientStop Color="#FF1EB9B2" Offset="0.191"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Label x:Name="label" Content="Name:" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top"/>

@@ -1,1 +1,1 @@
-SC delete Server Example
+SC delete Service1

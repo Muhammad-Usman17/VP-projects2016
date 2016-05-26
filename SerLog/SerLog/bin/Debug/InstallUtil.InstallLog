@@ -335,3 +335,93 @@ The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Proj
 The Commit phase completed successfully.
 
 The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.InstallLog.
+
+An exception occurred during the Install phase.
+System.ComponentModel.Win32Exception: The specified service has been marked for deletion
+
+The Rollback phase of the installation is beginning.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.InstallLog.
+
+The Rollback phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.InstallLog.
+
+An exception occurred during the Install phase.
+System.ComponentModel.Win32Exception: The specified service already exists
+
+The Rollback phase of the installation is beginning.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.InstallLog.
+
+The Rollback phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\vpservice\vpservice\obj\Debug\vpservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\Server001\Server001\obj\Debug\Server001.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\Server001\Server001\obj\Debug\Server001.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\Server001\Server001\obj\Debug\Server001.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\Server001\Server001\obj\Debug\Server001.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Desktop\sample\Server001\Server001\obj\Debug\Server001.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Desktop\sample\Server001\Server001\obj\Debug\Server001.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Users\Muhammad_Usman\Desktop\sample\Server001\Server001\obj\Debug\Server001.exe assembly's progress.
+The file is located at C:\Users\Muhammad_Usman\Desktop\sample\Server001\Server001\obj\Debug\Server001.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.

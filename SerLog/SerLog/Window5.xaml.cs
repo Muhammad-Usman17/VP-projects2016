@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
@@ -56,14 +57,20 @@ namespace SerLog
             }
             else
             {
-                try {
+                try
+                {
 
                     InstallService(textBox.Text);
                 }
-                catch(Exception t)
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("Error!! invalid path");
+                }
+                catch (Exception t)
                 {
                     MessageBox.Show(t.Message);
-                } 
+                }
+
             }
            
         }
