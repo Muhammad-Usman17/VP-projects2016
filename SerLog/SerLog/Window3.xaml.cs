@@ -1,25 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Drawing.Printing;
-using System.Drawing;
+
 
 namespace SerLog
 {
     /// <summary>
-    /// Interaction logic for Window3.xaml
+    /// this class is to read logfile,print logfile and clear the log file....
     /// </summary>
     public partial class Window3 : Window
     {
@@ -31,45 +20,60 @@ namespace SerLog
             timer.Interval = new TimeSpan(0, 0, 5);
             timer.Start();
 
-           
+
         }
         private void Timer_click(object sender, EventArgs e)
         {
             textBox.Text = Log.func.readlastError();
         }
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
 
-            Process.Start(ConfigUpdate.File.GetSetting("LogFilePath"));
+        private void openlogfile(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(ConfigUpdate.File.GetSetting("LogFilePath"));
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
         }
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void printlog(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Log.func.PrintFile(ConfigUpdate.File.GetSetting("LogFilePath"));
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
+        }
+
+        private void deletelog(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure to Clear the logfile?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    File.WriteAllText(ConfigUpdate.File.GetSetting("LogFilePath"), String.Empty);
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(ee.Message);
+                }
+            }
 
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void homescreen(object sender, RoutedEventArgs e)
         {
             this.Hide();
             Window1 W = new Window1();
             W.Show();
             this.Close();
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            Log.func.PrintFile(ConfigUpdate.File.GetSetting("LogFilePath"));
-        }
-
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Are you sure to Clear the logfile?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
-            {
-                File.WriteAllText(ConfigUpdate.File.GetSetting("LogFilePath"), String.Empty);
-
-            }
-            
         }
     }
 }

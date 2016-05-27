@@ -15,25 +15,21 @@
                     <GradientStop Color="#FF1EB9B2" Offset="0.191"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Label x:Name="label" Content="Name:" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="29,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFD9F0F5"/>
-            <Label x:Name="label1" Content="Email:" HorizontalAlignment="Left" Margin="183,23,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="187,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Background="#FFD9F0F5"/>
-            <Label x:Name="label2" Content="Name:" HorizontalAlignment="Left" Margin="26,95,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="27,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Background="#FFD9F0F5"/>
-            <Label x:Name="label3" Content="Email:" HorizontalAlignment="Left" Margin="184,96,0,0" VerticalAlignment="Top" Width="41"/>
-            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="184,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318" Background="#FFD9F0F5"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="135,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Background="#FFD9F0F5"/>
+            <Label x:Name="label3" Content="Admin Email:" HorizontalAlignment="Left" Margin="36,125,0,0" VerticalAlignment="Top" Width="76"/>
+            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="135,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Background="#FFD9F0F5"/>
             <Label x:Name="label4" Content="Subject:" HorizontalAlignment="Left" Margin="25,168,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,-0.334"/>
             <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="27,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Background="#FFD9F0F5"/>
             <Label x:Name="label5" Content="Body:" HorizontalAlignment="Left" Margin="25,217,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="64" Margin="29,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="470" Background="#FFD9F0F5"/>
-            <Button x:Name="button" Content="Test" HorizontalAlignment="Left" Margin="241,320,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-            <Button x:Name="button1" Content="Ok" HorizontalAlignment="Left" Margin="328,320,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-            <Button x:Name="button2" Content="Cancel" HorizontalAlignment="Left" Margin="417,320,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
-            <GroupBox x:Name="groupBox" Header="Sender" HorizontalAlignment="Left" Margin="14,13,0,0" VerticalAlignment="Top" Height="72" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold"/>
-            <GroupBox x:Name="groupBox1" Header="Recipient" HorizontalAlignment="Left" Margin="13,82,0,0" VerticalAlignment="Top" Height="78" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold"/>
-            <GroupBox x:Name="groupBox2" Header="Message" HorizontalAlignment="Left" Margin="11,156,0,0" VerticalAlignment="Top" Height="156" Width="497" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}"/>
-            <Label x:Name="label6" Content="Email Setting" HorizontalAlignment="Left" Margin="200,-1,0,0" VerticalAlignment="Top" Width="106" FontFamily="Arial Black"/>
+            <Button x:Name="button" Content="Test" HorizontalAlignment="Left" Margin="241,320,0,0" VerticalAlignment="Top" Width="75" Click="test" FontStyle="Italic"/>
+            <Button x:Name="button1" Content="Ok" HorizontalAlignment="Left" Margin="328,320,0,0" VerticalAlignment="Top" Width="75" Click="save" FontStyle="Italic"/>
+            <Button x:Name="button2" Content="Cancel" HorizontalAlignment="Left" Margin="417,320,0,0" VerticalAlignment="Top" Width="75" Click="homescreen" FontStyle="Italic"/>
+            <GroupBox x:Name="groupBox" Header="Sender" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Height="65" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold" FontStyle="Italic"/>
+            <GroupBox x:Name="groupBox1" Header="Recipient" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Height="63" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold" FontStyle="Italic"/>
+            <GroupBox x:Name="groupBox2" Header="Message" HorizontalAlignment="Left" Margin="9,159,0,0" VerticalAlignment="Top" Height="156" Width="497" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontStyle="Italic"/>
+            <Label x:Name="label6" Content="Email Setting" HorizontalAlignment="Left" Margin="200,-1,0,0" VerticalAlignment="Top" Width="116" FontFamily="Berlin Sans FB" FontSize="16" FontStyle="Italic"/>
+            <Label x:Name="label" Content="System Email  " Margin="36,64,382,259"/>
 
 
 

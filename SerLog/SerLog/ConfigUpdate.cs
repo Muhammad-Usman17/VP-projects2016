@@ -1,24 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
-namespace SerLog 
-{
+namespace SerLog
+{    /// <summary>
+     /// this class to modify and or read data from configuration file
+     /// </summary>
     class ConfigUpdate
     {
-       private static ConfigUpdate obj;
+        private static ConfigUpdate obj;
         private ConfigUpdate()
-        { 
+        {
         }
         public static ConfigUpdate File
         {
             get
             {
-                if(obj==null)
+                if (obj == null)
                 {
                     obj = new ConfigUpdate();
                 }
@@ -28,7 +26,8 @@ namespace SerLog
 
         public void SetSetting(string key, string value)
         {
-            try {
+            try
+            {
 
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 config.AppSettings.Settings.Remove(key);
@@ -36,7 +35,8 @@ namespace SerLog
                 config.Save(ConfigurationSaveMode.Modified, true);
                 config.SaveAs(@"C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\App.config", ConfigurationSaveMode.Modified, true);
                 ConfigurationManager.RefreshSection("appSettings");
-            }catch(Exception ee)
+            }
+            catch (Exception ee)
             {
                 MessageBox.Show("Error !!Configuration file is missing");
             }
@@ -47,9 +47,9 @@ namespace SerLog
 
         {
 
-                ConfigurationManager.RefreshSection("appSettings");
-                return ConfigurationManager.AppSettings[key];
-           
+            ConfigurationManager.RefreshSection("appSettings");
+            return ConfigurationManager.AppSettings[key];
+
         }
 
     }

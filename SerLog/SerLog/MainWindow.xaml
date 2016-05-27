@@ -26,9 +26,9 @@
             <Label x:Name="label2" Content="Password" HorizontalAlignment="Left" Margin="158,164,0,0" VerticalAlignment="Top" Width="69" FontFamily="Arial Rounded MT Bold"/>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="24" Margin="241,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="Snow" />
             <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="242,167,0,0" VerticalAlignment="Top" Width="119"/>
-            <Button x:Name="button" Content="Sign in" HorizontalAlignment="Left" Margin="334,219,0,0" VerticalAlignment="Top" Width="60" Height="27" Click="button_Click" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}"/>
+            <Button x:Name="button" Content="Sign in" HorizontalAlignment="Left" Margin="334,219,0,0" VerticalAlignment="Top" Width="60" Height="27" Click="Login" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}"/>
             <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="334,-3,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.038" Width="180" Height="27" FontSize="9.333" FontFamily="Sitka Small"/>
-            <Button x:Name="button1" Content="Forgot password ??" HorizontalAlignment="Left" Margin="376,314,0,0" VerticalAlignment="Top" Width="123" Click="button1_Click">
+            <Button x:Name="button1" Content="Forgot password ??" HorizontalAlignment="Left" Margin="376,314,0,0" VerticalAlignment="Top" Width="123" Click="lostpassword">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>

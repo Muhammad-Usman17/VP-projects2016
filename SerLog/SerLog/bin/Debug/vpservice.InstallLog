@@ -1,0 +1,26 @@
+﻿Installing assembly 'C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.InstallLog
+   assemblypath = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.InstallLog
+   assemblypath = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe
+Installing assembly 'C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.InstallLog
+   assemblypath = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.InstallLog
+   assemblypath = C:\Users\Muhammad_Usman\Documents\Visual Studio 2015\Projects\VP-projects2016\SerLog\SerLog\bin\Debug\vpservice.exe

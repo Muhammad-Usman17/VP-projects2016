@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace SerLog
 {
@@ -39,7 +27,7 @@ namespace SerLog
             label3.Content = DateTime.Now.ToString("HH:mm:ss") + " " + DateTime.Now.ToLongDateString();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void Login(object sender, RoutedEventArgs e)
         {
 
             //string admin = textBox.Text.ToString();
@@ -59,7 +47,7 @@ namespace SerLog
 
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void lostpassword(object sender, RoutedEventArgs e)
         {
             string Password = "Your Password is  " + ConfigUpdate.File.GetSetting("Password");
             SendMail.mail.sendNotification(Password, ConfigUpdate.File.GetSetting("SystemMail"), ConfigUpdate.File.GetSetting("AdminEMail"));

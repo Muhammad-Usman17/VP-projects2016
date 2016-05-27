@@ -1,1 +1,1 @@
-SC delete Service1
+SC delete Client

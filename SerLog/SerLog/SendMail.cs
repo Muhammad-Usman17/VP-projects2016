@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace SerLog
-{
+{/// <summary>
+ /// this class to validate the email address and send mail for testing....
+ /// </summary>
     class SendMail
     {
         private static SendMail obj;
